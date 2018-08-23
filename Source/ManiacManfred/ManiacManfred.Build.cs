@@ -15,7 +15,7 @@ public class ManiacManfred : ModuleRules
 		
 		PublicIncludePaths.AddRange(new string[] { Path.Combine(ModuleDirectory, "../../Plugins/ArticyImporter/Source/ArticyRuntime/Public") });
 
-		PrivateDependencyModuleNames.AddRange(new string[] {  });
+		PrivateDependencyModuleNames.AddRange(new string[] { "Json" });
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
