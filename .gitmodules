@@ -1,0 +1,3 @@
+[submodule "Plugins/ArticyImporter"]
+	path = Plugins/ArticyImporter
+	url = https://github.com/Quexlaw/ArticyImporterForUnreal
