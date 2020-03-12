@@ -56,6 +56,17 @@ class EManiacManfredSelectabilityModes : uint8
 
 UENUM(BlueprintType)
 enum
+/** UENUM generated form ArticyObjectDef VisibilityModes */
+class EManiacManfredVisibilityModes : uint8
+{
+	Invisible = 0,
+	Visible = 1,
+};
+
+/** -------------------------------------------------------------------------------- */
+
+UENUM(BlueprintType)
+enum
 /** UENUM generated form ArticyObjectDef OutlineStyle */
 class EManiacManfredOutlineStyle : uint8
 {
@@ -64,17 +75,6 @@ class EManiacManfredOutlineStyle : uint8
 	Dash = 2,
 	DashDot = 3,
 	DashDotDot = 4,
-};
-
-/** -------------------------------------------------------------------------------- */
-
-UENUM(BlueprintType)
-enum
-/** UENUM generated form ArticyObjectDef VisibilityModes */
-class EManiacManfredVisibilityModes : uint8
-{
-	Invisible = 0,
-	Visible = 1,
 };
 
 /** -------------------------------------------------------------------------------- */
