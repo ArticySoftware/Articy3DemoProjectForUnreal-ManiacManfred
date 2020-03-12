@@ -66,6 +66,8 @@ private:
 	
 public:
 	
+	#pragma warning(push)
+	#pragma warning(disable: 4883) //<disable "optimization cannot be applied due to function size" compile error.
 	 UManiacManfredExpressoScripts() 
 	{
 		Conditions.Add(157729511, [&]
@@ -907,4 +909,5 @@ public:
 			);
 		});
 	}
+	#pragma warning(pop)
 };
