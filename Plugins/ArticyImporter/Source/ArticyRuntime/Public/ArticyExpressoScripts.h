@@ -1,14 +1,12 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.  
+ 
 //
 #pragma once
 
-#include "Regex.h"
-#include "ArticyRef.h"
+#include "Internationalization/Regex.h"
 #include "ArticyObject.h"
 #include "ArticyDatabase.h"
-//#include "ArticyGlobalVariables.h"
 
 #include "ArticyExpressoScripts.generated.h"
 
@@ -96,7 +94,6 @@ struct ARTICYRUNTIME_API ExpressoType
 
 	//---------------------------------------------------------------------------//
 
-	#pragma region operators
 	ExpressoType operator-() const;
 
 	bool operator==(const ExpressoType& Other) const;
@@ -123,7 +120,6 @@ struct ARTICYRUNTIME_API ExpressoType
 	ExpressoType& operator--();
 	ExpressoType operator--(int);*/
 
-	#pragma endregion
 	//---------------------------------------------------------------------------//
 
 	struct Definition

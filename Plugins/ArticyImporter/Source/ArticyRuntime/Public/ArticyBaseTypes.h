@@ -1,6 +1,6 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.  
+ 
 //
 #pragma once
 
@@ -8,8 +8,6 @@
 #include "ArticyBaseTypes.generated.h"
 
 class UArticyObject;
-
-#pragma region Numeric Types
 
 /**
  * 64-bit ID used for referencing articy objects, exposable to blueprints.
@@ -81,25 +79,11 @@ public:
 	{
 		return Id.Low ^ Id.High;
 	}
-};
 
-USTRUCT(BlueprintType)
-struct FArticyPackage
-{
-	GENERATED_BODY()
-
-public:
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Package")
-	FString Name;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Package")
-	FString Description;
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Package")
-	bool bIsDefaultPackage = false;
-
-	/** All the objects that belong to this model. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
-	TArray<UArticyPrimitive*> Objects;
+	bool IsNull() const
+	{
+		return High == 0 && Low == 0;
+	}
 };
 
 //---------------------------------------------------------------------------//
@@ -149,11 +133,7 @@ public:
 	float h;
 };
 
-#pragma endregion
-
 //---------------------------------------------------------------------------//
-
-#pragma region enums
 
 UENUM(BlueprintType)
 enum class EArticyPreviewImageViewBoxModes : uint8
@@ -169,5 +149,3 @@ enum class EArticyLocationAnchorSize : uint8
 	Medium = 1,
 	Large = 2,
 };
-
-#pragma endregion

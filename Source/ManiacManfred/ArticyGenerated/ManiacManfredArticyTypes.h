@@ -5,6 +5,7 @@
 
 #include "CoreUObject.h"
 #include "ArticyRuntime/Public/ArticyBaseInclude.h"
+#include "ManiacManfredInterfaces.h"
 #include "ManiacManfredArticyTypes.generated.h"
 
 
@@ -55,6 +56,17 @@ class EManiacManfredSelectabilityModes : uint8
 
 UENUM(BlueprintType)
 enum
+/** UENUM generated form ArticyObjectDef VisibilityModes */
+class EManiacManfredVisibilityModes : uint8
+{
+	Invisible = 0,
+	Visible = 1,
+};
+
+/** -------------------------------------------------------------------------------- */
+
+UENUM(BlueprintType)
+enum
 /** UENUM generated form ArticyObjectDef OutlineStyle */
 class EManiacManfredOutlineStyle : uint8
 {
@@ -63,17 +75,6 @@ class EManiacManfredOutlineStyle : uint8
 	Dash = 2,
 	DashDot = 3,
 	DashDotDot = 4,
-};
-
-/** -------------------------------------------------------------------------------- */
-
-UENUM(BlueprintType)
-enum
-/** UENUM generated form ArticyObjectDef VisibilityModes */
-class EManiacManfredVisibilityModes : uint8
-{
-	Invisible = 0,
-	Visible = 1,
 };
 
 /** -------------------------------------------------------------------------------- */
@@ -283,12 +284,24 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef DialogChoice */
 UCLASS(BlueprintType)
-class UManiacManfredDialogChoice : public UManiacManfredDialogueFragment
+class UManiacManfredDialogChoice : public UManiacManfredDialogueFragment,
+ public IManiacManfredObjectWithSoundfileFeature,
+ public IManiacManfredObjectWithDialogChoiceFeature
 {
 	GENERATED_BODY()
 	
 public:
 	
+	/** IManiacManfredObjectWithSoundfileFeature implementation */
+	UManiacManfredSoundfileFeature* GetFeatureSoundfile() const override
+	{
+		return Soundfile;
+	}
+	/** IManiacManfredObjectWithDialogChoiceFeature implementation */
+	UManiacManfredDialogChoiceFeature* GetFeatureDialogChoice() const override
+	{
+		return DialogChoice;
+	}
 	/** Soundfile */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UManiacManfredSoundfileFeature* Soundfile;
@@ -341,7 +354,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Comment */
 UCLASS(BlueprintType)
-class UManiacManfredComment : public UArticyObject,
+class UManiacManfredComment : public UArticyComment,
  public IArticyObjectWithColor,
  public IArticyObjectWithText,
  public IArticyObjectWithExternalId,
@@ -415,7 +428,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Entity */
 UCLASS(BlueprintType)
-class UManiacManfredEntity : public UArticyObject,
+class UManiacManfredEntity : public UArticyEntity,
  public IArticyObjectWithAttachments,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithColor,
@@ -485,12 +498,24 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef Item */
 UCLASS(BlueprintType)
-class UManiacManfredItem : public UManiacManfredEntity
+class UManiacManfredItem : public UManiacManfredEntity,
+ public IManiacManfredObjectWithItemCombinationFeature,
+ public IManiacManfredObjectWithVariableBindingFeature
 {
 	GENERATED_BODY()
 	
 public:
 	
+	/** IManiacManfredObjectWithItemCombinationFeature implementation */
+	UManiacManfredItemCombinationFeature* GetFeatureItemCombination() const override
+	{
+		return ItemCombination;
+	}
+	/** IManiacManfredObjectWithVariableBindingFeature implementation */
+	UManiacManfredVariableBindingFeature* GetFeatureVariableBinding() const override
+	{
+		return VariableBinding;
+	}
 	/** ItemCombination */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UManiacManfredItemCombinationFeature* ItemCombination;
@@ -528,12 +553,18 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef Character */
 UCLASS(BlueprintType)
-class UManiacManfredCharacter : public UManiacManfredEntity
+class UManiacManfredCharacter : public UManiacManfredEntity,
+ public IManiacManfredObjectWithCharacterFeature
 {
 	GENERATED_BODY()
 	
 public:
 	
+	/** IManiacManfredObjectWithCharacterFeature implementation */
+	UManiacManfredCharacterFeature* GetFeatureCharacter() const override
+	{
+		return Character;
+	}
 	/** Character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UManiacManfredCharacterFeature* Character;
@@ -554,12 +585,24 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef Player_Character */
 UCLASS(BlueprintType)
-class UManiacManfredPlayer_Character : public UManiacManfredEntity
+class UManiacManfredPlayer_Character : public UManiacManfredEntity,
+ public IManiacManfredObjectWithMoraleFeature,
+ public IManiacManfredObjectWithCharacterFeature
 {
 	GENERATED_BODY()
 	
 public:
 	
+	/** IManiacManfredObjectWithMoraleFeature implementation */
+	UManiacManfredMoraleFeature* GetFeatureMorale() const override
+	{
+		return Morale;
+	}
+	/** IManiacManfredObjectWithCharacterFeature implementation */
+	UManiacManfredCharacterFeature* GetFeatureCharacter() const override
+	{
+		return Character;
+	}
 	/** Morale */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UManiacManfredMoraleFeature* Morale;
@@ -572,7 +615,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Location */
 UCLASS(BlueprintType)
-class UManiacManfredLocation : public UArticyObject,
+class UManiacManfredLocation : public UArticyLocation,
  public IArticyObjectWithAttachments,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithPreviewImage,
@@ -631,12 +674,24 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef LocationSettings */
 UCLASS(BlueprintType)
-class UManiacManfredLocationSettings : public UManiacManfredLocation
+class UManiacManfredLocationSettings : public UManiacManfredLocation,
+ public IManiacManfredObjectWithSoundfileFeature,
+ public IManiacManfredObjectWithLocationSettingsFeature
 {
 	GENERATED_BODY()
 	
 public:
 	
+	/** IManiacManfredObjectWithSoundfileFeature implementation */
+	UManiacManfredSoundfileFeature* GetFeatureSoundfile() const override
+	{
+		return Soundfile;
+	}
+	/** IManiacManfredObjectWithLocationSettingsFeature implementation */
+	UManiacManfredLocationSettingsFeature* GetFeatureLocationSettings() const override
+	{
+		return LocationSettings;
+	}
 	/** Soundfile */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UManiacManfredSoundfileFeature* Soundfile;
@@ -649,7 +704,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Spot */
 UCLASS(BlueprintType)
-class UManiacManfredSpot : public UArticyObject,
+class UManiacManfredSpot : public UArticySpot,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithColor,
  public IArticyObjectWithText,
@@ -706,7 +761,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Zone */
 UCLASS(BlueprintType)
-class UManiacManfredZone : public UArticyObject,
+class UManiacManfredZone : public UArticyZone,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithPreviewImage,
  public IArticyObjectWithVertices,
@@ -799,12 +854,18 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef Conditional_Zone */
 UCLASS(BlueprintType)
-class UManiacManfredConditional_Zone : public UManiacManfredZone
+class UManiacManfredConditional_Zone : public UManiacManfredZone,
+ public IManiacManfredObjectWithZoneConditionFeature
 {
 	GENERATED_BODY()
 	
 public:
 	
+	/** IManiacManfredObjectWithZoneConditionFeature implementation */
+	UManiacManfredZoneConditionFeature* GetFeatureZoneCondition() const override
+	{
+		return ZoneCondition;
+	}
 	/** ZoneCondition */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UManiacManfredZoneConditionFeature* ZoneCondition;
@@ -814,7 +875,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Path */
 UCLASS(BlueprintType)
-class UManiacManfredPath : public UArticyObject,
+class UManiacManfredPath : public UArticyPath,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithPreviewImage,
  public IArticyObjectWithVertices,
@@ -880,7 +941,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Link */
 UCLASS(BlueprintType)
-class UManiacManfredLink : public UArticyObject,
+class UManiacManfredLink : public UArticyLink,
  public IArticyObjectWithColor,
  public IArticyObjectWithText,
  public IArticyObjectWithExternalId,
@@ -971,12 +1032,18 @@ public:
 
 /** UCLASS generated from ArticyObjectDef BackgroundImage */
 UCLASS(BlueprintType)
-class UManiacManfredBackgroundImage : public UManiacManfredAsset
+class UManiacManfredBackgroundImage : public UManiacManfredAsset,
+ public IManiacManfredObjectWithVariableBindingFeature
 {
 	GENERATED_BODY()
 	
 public:
 	
+	/** IManiacManfredObjectWithVariableBindingFeature implementation */
+	UManiacManfredVariableBindingFeature* GetFeatureVariableBinding() const override
+	{
+		return VariableBinding;
+	}
 	/** VariableBinding */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UManiacManfredVariableBindingFeature* VariableBinding;
@@ -1070,7 +1137,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef LocationText */
 UCLASS(BlueprintType)
-class UManiacManfredLocationText : public UArticyObject,
+class UManiacManfredLocationText : public UArticyLocationText,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithPreviewImage,
  public IArticyObjectWithVertices,
@@ -1132,7 +1199,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef LocationImage */
 UCLASS(BlueprintType)
-class UManiacManfredLocationImage : public UArticyObject,
+class UManiacManfredLocationImage : public UArticyLocationImage,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithPreviewImage,
  public IArticyObjectWithVertices,
@@ -1217,12 +1284,18 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef DisplayCondition */
 UCLASS(BlueprintType)
-class UManiacManfredDisplayCondition : public UManiacManfredLocationImage
+class UManiacManfredDisplayCondition : public UManiacManfredLocationImage,
+ public IManiacManfredObjectWithDisplayConditionFeature
 {
 	GENERATED_BODY()
 	
 public:
 	
+	/** IManiacManfredObjectWithDisplayConditionFeature implementation */
+	UManiacManfredDisplayConditionFeature* GetFeatureDisplayCondition() const override
+	{
+		return DisplayCondition;
+	}
 	/** DisplayCondition */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UManiacManfredDisplayConditionFeature* DisplayCondition;
@@ -1232,7 +1305,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Document */
 UCLASS(BlueprintType)
-class UManiacManfredDocument : public UArticyObject,
+class UManiacManfredDocument : public UArticyDocument,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithColor,
  public IArticyObjectWithText,
@@ -1268,7 +1341,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef TextObject */
 UCLASS(BlueprintType)
-class UManiacManfredTextObject : public UArticyObject,
+class UManiacManfredTextObject : public UArticyTextObject,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithAttachments,
  public IArticyObjectWithPreviewImage,
@@ -1310,7 +1383,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef UserFolder */
 UCLASS(BlueprintType)
-class UManiacManfredUserFolder : public UArticyObject,
+class UManiacManfredUserFolder : public UArticyUserFolder,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithExternalId,
  public IArticyObjectWithShortId,

@@ -4,7 +4,7 @@
 #include "Engine/World.h"
 #include "ArticyReference.h"
 #include "Paper2DClasses.h"
-#include "UObjectGlobals.h"
+#include "UObject/UObjectGlobals.h"
 
 /* This class will take care of populating a Unreal level with elements from an articy location.
 *  The goal of this class is to very quickly and easily fill your scene from an articy location and it should give you an idea how you can use the plugin

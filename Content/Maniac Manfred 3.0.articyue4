@@ -5,8 +5,8 @@
     "set_IncludedNodes": "Settings, Project, GlobalVariables, ObjectDefinitions, Packages, ScriptMethods, Hierarchy, Assets",
     "set_UseScriptSupport": "True",
     "ExportVersion": "0.1",
-    "ObjectDefinitionsHash": "7E6C90063AD35F24F368743B52FF87F208180FAB81AB19CE0EF644A044307A19",
-    "ScriptFragmentsHash": "3599579777"
+    "ObjectDefinitionsHash": "973F01943E689E06FD9D42E4191F5A6CBDAC2E124CBD7E1B85A12C2394FB305A",
+    "ScriptFragmentsHash": "1832677708"
   },
   "Project": {
     "Name": "Maniac Manfred 3.0",
@@ -518,17 +518,6 @@
       }
     },
     {
-      "Type": "OutlineStyle",
-      "Class": "Enum",
-      "Values": {
-        "Solid": 0,
-        "Dot": 1,
-        "Dash": 2,
-        "DashDot": 3,
-        "DashDotDot": 4
-      }
-    },
-    {
       "Type": "VisibilityModes",
       "Class": "Enum",
       "Values": {
@@ -580,6 +569,7 @@
     {
       "Type": "FlowFragment",
       "Class": "FlowFragment",
+      "DisplayName": "FlowFragment",
       "Properties": [
         {
           "Property": "Attachments",
@@ -649,6 +639,7 @@
     {
       "Type": "Dialogue",
       "Class": "Dialogue",
+      "DisplayName": "Dialogue",
       "Properties": [
         {
           "Property": "Attachments",
@@ -718,6 +709,7 @@
     {
       "Type": "DialogueFragment",
       "Class": "DialogueFragment",
+      "DisplayName": "DialogueFragment",
       "Properties": [
         {
           "Property": "MenuText",
@@ -878,6 +870,7 @@
     {
       "Type": "Hub",
       "Class": "Hub",
+      "DisplayName": "Hub",
       "Properties": [
         {
           "Property": "DisplayName",
@@ -938,6 +931,7 @@
     {
       "Type": "Comment",
       "Class": "Comment",
+      "DisplayName": "Comment",
       "Properties": [
         {
           "Property": "CreatedBy",
@@ -992,6 +986,7 @@
     {
       "Type": "Jump",
       "Class": "Jump",
+      "DisplayName": "Jump",
       "Properties": [
         {
           "Property": "Color",
@@ -1056,6 +1051,7 @@
     {
       "Type": "Entity",
       "Class": "Entity",
+      "DisplayName": "Entity",
       "Properties": [
         {
           "Property": "Attachments",
@@ -1536,6 +1532,7 @@
     {
       "Type": "Location",
       "Class": "Location",
+      "DisplayName": "Location",
       "Properties": [
         {
           "Property": "Attachments",
@@ -1706,6 +1703,7 @@
     {
       "Type": "Spot",
       "Class": "Spot",
+      "DisplayName": "Spot",
       "Properties": [
         {
           "Property": "DisplayName",
@@ -1796,6 +1794,7 @@
     {
       "Type": "Zone",
       "Class": "Zone",
+      "DisplayName": "Zone",
       "Properties": [
         {
           "Property": "DisplayName",
@@ -2085,6 +2084,7 @@
     {
       "Type": "Path",
       "Class": "Path",
+      "DisplayName": "Path",
       "Properties": [
         {
           "Property": "DisplayName",
@@ -2192,6 +2192,7 @@
     {
       "Type": "Link",
       "Class": "Link",
+      "DisplayName": "Link",
       "Properties": [
         {
           "Property": "Color",
@@ -2266,6 +2267,7 @@
     {
       "Type": "Asset",
       "Class": "Asset",
+      "DisplayName": "Asset",
       "Properties": [
         {
           "Property": "DisplayName",
@@ -2358,6 +2360,7 @@
     {
       "Type": "Condition",
       "Class": "Condition",
+      "DisplayName": "Condition",
       "Properties": [
         {
           "Property": "DisplayName",
@@ -2422,6 +2425,7 @@
     {
       "Type": "Instruction",
       "Class": "Instruction",
+      "DisplayName": "Instruction",
       "Properties": [
         {
           "Property": "DisplayName",
@@ -2486,6 +2490,7 @@
     {
       "Type": "LocationText",
       "Class": "LocationText",
+      "DisplayName": "LocationText",
       "Properties": [
         {
           "Property": "DisplayName",
@@ -2586,6 +2591,7 @@
     {
       "Type": "LocationImage",
       "Class": "LocationImage",
+      "DisplayName": "LocationImage",
       "Properties": [
         {
           "Property": "DisplayName",
@@ -2740,6 +2746,7 @@
     {
       "Type": "Document",
       "Class": "Document",
+      "DisplayName": "Document",
       "Properties": [
         {
           "Property": "DisplayName",
@@ -2790,6 +2797,7 @@
     {
       "Type": "TextObject",
       "Class": "TextObject",
+      "DisplayName": "TextObject",
       "Properties": [
         {
           "Property": "DisplayName",
@@ -2849,6 +2857,7 @@
     {
       "Type": "UserFolder",
       "Class": "UserFolder",
+      "DisplayName": "UserFolder",
       "Properties": [
         {
           "Property": "DisplayName",
@@ -19861,7 +19870,7 @@
               },
               {
                 "x": 44.364521026611328,
-                "y": 9.8532791137695312
+                "y": 9.8532791137695313
               },
               {
                 "x": 34.808860778808594,
@@ -19869,7 +19878,7 @@
               },
               {
                 "x": 24.792407989501953,
-                "y": 58.429702758789062
+                "y": 58.429702758789063
               },
               {
                 "x": 0.0,
@@ -20062,7 +20071,7 @@
             },
             "Vertices": [
               {
-                "x": 5.9380264282226562,
+                "x": 5.9380264282226563,
                 "y": 88.9122314453125
               },
               {
@@ -20423,7 +20432,7 @@
                 "y": 258.32281494140625
               },
               {
-                "x": 57.838577270507812,
+                "x": 57.838577270507813,
                 "y": 49.659713745117188
               },
               {
@@ -20435,7 +20444,7 @@
                 "y": 0.0
               },
               {
-                "x": 345.23318481445312,
+                "x": 345.23318481445313,
                 "y": 718.052490234375
               },
               {
@@ -20768,12 +20777,12 @@
                 "y": 3.0949935913085938
               },
               {
-                "x": 88.326553344726562,
+                "x": 88.326553344726563,
                 "y": 0.0
               },
               {
                 "x": 90.538330078125,
-                "y": 85.883865356445312
+                "y": 85.883865356445313
               },
               {
                 "x": 124.91360473632813,
@@ -21280,7 +21289,7 @@
               },
               {
                 "x": 22.147258758544922,
-                "y": 2.5157241821289062
+                "y": 2.5157241821289063
               },
               {
                 "x": 23.229015350341797,
@@ -21398,7 +21407,7 @@
                 "y": 48.724617004394531
               },
               {
-                "x": 57.125564575195312,
+                "x": 57.125564575195313,
                 "y": 55.175357818603516
               },
               {
@@ -21958,7 +21967,7 @@
               },
               {
                 "x": 109.78059387207031,
-                "y": 28.942153930664062
+                "y": 28.942153930664063
               },
               {
                 "x": 104.79056549072266,
@@ -22508,7 +22517,7 @@
                 "y": 15.226993560791016
               },
               {
-                "x": 25.506057739257812,
+                "x": 25.506057739257813,
                 "y": 16.332006454467773
               },
               {
@@ -22557,7 +22566,7 @@
               },
               {
                 "x": 16.332006454467773,
-                "y": 25.506057739257812
+                "y": 25.506057739257813
               },
               {
                 "x": 15.226993560791016,
@@ -22581,7 +22590,7 @@
               },
               {
                 "x": 9.6161327362060547,
-                "y": 25.506057739257812
+                "y": 25.506057739257813
               },
               {
                 "x": 8.5366764068603516,
@@ -22600,7 +22609,7 @@
                 "y": 23.601806640625
               },
               {
-                "x": 4.6344985961914062,
+                "x": 4.6344985961914063,
                 "y": 22.912784576416016
               },
               {
@@ -22673,14 +22682,14 @@
               },
               {
                 "x": 3.0353555679321289,
-                "y": 4.6344985961914062
+                "y": 4.6344985961914063
               },
               {
                 "x": 3.8000173568725586,
                 "y": 3.8000173568725586
               },
               {
-                "x": 4.6344985961914062,
+                "x": 4.6344985961914063,
                 "y": 3.0353555679321289
               },
               {
@@ -22753,7 +22762,7 @@
               },
               {
                 "x": 22.912784576416016,
-                "y": 4.6344985961914062
+                "y": 4.6344985961914063
               },
               {
                 "x": 23.601806640625,
@@ -22772,7 +22781,7 @@
                 "y": 8.5366764068603516
               },
               {
-                "x": 25.506057739257812,
+                "x": 25.506057739257813,
                 "y": 9.6161327362060547
               },
               {
@@ -23156,7 +23165,7 @@
             },
             "Vertices": [
               {
-                "x": 23.367141723632812,
+                "x": 23.367141723632813,
                 "y": 3.4573898315429688
               },
               {
@@ -23168,7 +23177,7 @@
                 "y": 55.809028625488281
               },
               {
-                "x": 83.252090454101562,
+                "x": 83.252090454101563,
                 "y": 0.0
               }
             ],
@@ -23351,7 +23360,7 @@
             "Vertices": [
               {
                 "x": 18.0,
-                "y": 48.992019653320312
+                "y": 48.992019653320313
               },
               {
                 "x": 147.00199890136719,
@@ -23552,7 +23561,7 @@
                 "y": 45.2548942565918
               },
               {
-                "x": 73.299453735351562,
+                "x": 73.299453735351563,
                 "y": 18.209617614746094
               },
               {
@@ -23702,7 +23711,7 @@
             "Transform": {
               "Pivot": {
                 "x": 17.637107849121094,
-                "y": 70.020889282226562
+                "y": 70.020889282226563
               },
               "Rotation": 0.0,
               "Translation": {
@@ -24140,7 +24149,7 @@
               },
               {
                 "x": 135.92567443847656,
-                "y": 286.05252075195312
+                "y": 286.05252075195313
               },
               {
                 "x": 0.15209674835205078,
@@ -24398,7 +24407,7 @@
             "Transform": {
               "Pivot": {
                 "x": 85.329460144042969,
-                "y": 75.848403930664062
+                "y": 75.848403930664063
               },
               "Rotation": 0.0,
               "Translation": {
@@ -24547,7 +24556,7 @@
                 "y": 41.180900573730469
               },
               {
-                "x": 77.497695922851562,
+                "x": 77.497695922851563,
                 "y": 28.232322692871094
               },
               {
@@ -24560,11 +24569,11 @@
               },
               {
                 "x": 18.741966247558594,
-                "y": 6.1873245239257812
+                "y": 6.1873245239257813
               },
               {
                 "x": 13.251607894897461,
-                "y": 21.374649047851562
+                "y": 21.374649047851563
               },
               {
                 "x": 0.76124906539916992,
@@ -24576,7 +24585,7 @@
               },
               {
                 "x": 28.542694091796875,
-                "y": 60.026626586914062
+                "y": 60.026626586914063
               },
               {
                 "x": 56.846637725830078,
@@ -24584,7 +24593,7 @@
               },
               {
                 "x": 78.769500732421875,
-                "y": 62.789871215820312
+                "y": 62.789871215820313
               },
               {
                 "x": 93.976112365722656,
@@ -25682,7 +25691,7 @@
             "Transform": {
               "Pivot": {
                 "x": 512.0,
-                "y": 384.00003051757812
+                "y": 384.00003051757813
               },
               "Rotation": 0.0,
               "Translation": {
@@ -25955,7 +25964,7 @@
             "Transform": {
               "Pivot": {
                 "x": 512.0,
-                "y": 384.00003051757812
+                "y": 384.00003051757813
               },
               "Rotation": 0.0,
               "Translation": {

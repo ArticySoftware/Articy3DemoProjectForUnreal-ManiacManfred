@@ -1,6 +1,6 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.  
+ 
 //
 #pragma once
 
@@ -37,7 +37,9 @@ class ARTICYRUNTIME_API UArticyAsset : public UArticyObject
 	GENERATED_BODY()
 
 public:
-
+	UFUNCTION(BlueprintCallable, Category="Load Asset")
+	UObject* LoadAsset() const;
+	
 	UFUNCTION(BlueprintCallable, Category="Load Asset")
 	UTexture* LoadAsTexture() const;
 
@@ -45,8 +47,11 @@ public:
 	UTexture2D* LoadAsTexture2D() const;
 
 	UFUNCTION(BlueprintCallable, Category="Load Asset")
-	class UFileMediaSource* LoadAsAudio() const;
+	class USoundWave* LoadAsSoundWave() const;
 
+	UFUNCTION(BlueprintCallable, Category = "Load Asset")
+	class UFileMediaSource* LoadAsFileMediaSource() const;
+	
 	/** The relative path of the referenced asset. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Meta Data")
 	FString AssetRef;
@@ -57,6 +62,4 @@ public:
 private:
 	UPROPERTY(Transient, VisibleAnywhere)
 	mutable TWeakObjectPtr<UObject> Asset = nullptr;
-
-	UObject* GetAsset() const;
 };

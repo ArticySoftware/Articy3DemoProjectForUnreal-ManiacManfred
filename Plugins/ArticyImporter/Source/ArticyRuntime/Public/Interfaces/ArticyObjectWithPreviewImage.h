@@ -1,10 +1,11 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.  
+ 
 //
 #pragma once
 
 #include "ArticyObjectWith_Base.h"
+#include "ArticyBuiltinTypes.h"
 #include "ArticyObjectWithPreviewImage.generated.h"
 
 UINTERFACE(MinimalAPI, BlueprintType, meta=(CannotImplementInterfaceInBlueprint))

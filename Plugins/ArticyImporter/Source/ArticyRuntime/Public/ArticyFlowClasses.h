@@ -1,11 +1,11 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.  
+ 
 //
 #pragma once
 
 #include "ArticyPins.h"
-#include "ArticyNode.h"
+#include "Interfaces/ArticyNode.h"
 
 #include "ArticyFlowClasses.generated.h"
 
@@ -74,15 +74,17 @@ public:
 	EArticyPausableType GetType() override { return EArticyPausableType::Jump; }
 
 	UArticyPrimitive* GetTarget() const;
+	FArticyId GetTargetID() const { return Target; }
 	UArticyFlowPin* GetTargetPin() const;
+	FArticyId GetTargetPinID() const { return TargetPin; }
 
 	void Explore(UArticyFlowPlayer* Player, TArray<FArticyBranch>& OutBranches, const uint32& Depth) override;
 
 protected:
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(DisplayName="TargetPin"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(DisplayName="TargetPin"))
 	FArticyId TargetPin;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta=(DisplayName="Target"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(DisplayName="Target"))
 	FArticyId Target;
 
 private:

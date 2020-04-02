@@ -1,11 +1,11 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.  
+ 
 //
-#include "ArticyRuntimePrivatePCH.h"
+
 
 #include "ArticyExpressoScripts.h"
-#include "ArticyRuntime.h"
+#include "ArticyRuntimeModule.h"
 #include "ArticyFlowPlayer.h"
 
 TMap<FName, ExpressoType::Definition> ExpressoType::Definitions;
@@ -121,8 +121,6 @@ ExpressoType::operator FString() const
 //---------------------------------------------------------------------------//
 //===========================================================================//
 
-#pragma region operators
-
 ExpressoType ExpressoType::operator-() const
 {
 	switch (Type)
@@ -136,7 +134,7 @@ ExpressoType ExpressoType::operator-() const
 	case Float:
 		return ExpressoType(-GetFloat());
 	case String:
-		return ExpressoType("");
+		return ExpressoType(FString(""));
 
 	default:
 		ensureMsgf(false, TEXT("Unknown ArticyExpressoType!"));
@@ -408,8 +406,6 @@ ExpressoType ExpressoType::operator--(int)
 	return tmp;
 }
 */
-
-#pragma endregion
 
 //---------------------------------------------------------------------------//
 

@@ -1,6 +1,6 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.  
+ 
 //
 #pragma once
 
@@ -27,10 +27,14 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FArticyId Id;
 
-	friend struct FArticyClonableObject;
+	// TODO k2 - changed to UArticyCloneableObject
+	//friend struct FArticyClonableObject;
+	friend struct FArticyObjectShadow;
 	/** The ID of this instance (0 is the original object). */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	int32 CloneId = 0;
+
+
 
 protected:
 	/** Used internally by ArticyImporter. */
@@ -47,11 +51,7 @@ protected:
 
 		JSON_TRY_HEX_ID(obj, Id);
 	}
-
-	friend UArticyPrimitive* FArticyRef::GetReference();
-
-	static UArticyPrimitive* FindAsset(const FArticyId& Id);
-
+	
 private:
 	mutable FString Path = "";
 };

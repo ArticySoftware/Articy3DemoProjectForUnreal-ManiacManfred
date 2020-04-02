@@ -1,6 +1,6 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
-// Licensed under the MIT license. See LICENSE file in the project root for full license information.  
+ 
 //
 
 #pragma once
@@ -35,6 +35,6 @@ public:
 	UArticyPrimitive* GetObject(const UObject* WorldContext);
 	/** Set the referenced object */
 	UFUNCTION(BlueprintCallable, Category = "Objects")
-	void SetReference(UArticyPrimitive* Object);
+	void SetReference(UArticyObject* Object);
 	
 };
