@@ -21,7 +21,7 @@ public:
 };
 
 UCLASS(BlueprintType, Blueprintable)
-class UManiacManfredExpressoScripts : public UArticyExpressoScripts
+class MANIACMANFRED_API UManiacManfredExpressoScripts : public UArticyExpressoScripts
 {
 	GENERATED_BODY()
 	

@@ -1,3 +1,68 @@
+## Unreal Importer 1.0.2 Changelog
+- New Features:
+    - Articy Flow Debugger added
+        - The flow debugger is an actor found in the plugin content folder (not the generated ArticyContent folder!), which can be placed in the world.
+        Upon setting the 'Start On' articy reference to a flow object of your choice and hitting Play, a simple UI will popup to display your dialogue and dialogue branches.
+        Depending on the 'Ignore invalid branches' bool, branches with unfulfilled conditions will either not appear or they will show up in red.
+        This is a means to test your imported dialogue easily without needing to setup a UI on your own.
+
+- General:
+    - Changed: Articy Flow Player's 'Start On' attribute now can only select objects in the ArticyNode hierarchy (flow objects effectively, rather than entities)
+    - Changed: Removal of several monolithic headers (Engine.h and SlateBasics.h) and many include changes across the board
+    - Fix: ExpressoScripts that compare integers with floats now behave correctly. This is valid for all comparison operators (<, >, <=, >=, ==, !=)
+    - Fix: Compilation errors for Mac, Linux, and iOS.
+    
+## Unreal Importer 1.0.1 Changelog
+- New Features:
+    - ArticyRef meta data attribute "ArticyClassRestriction" added in C++
+        This meta data attribute will set the class filter restriction to the chosen class permanently and can not be changed without changing the meta data.
+        This allows programmers to set the allowed class hierarchy for a Blueprint-exposed ArticyRef structure.
+        Example here:
+        ```
+        UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Setup", meta=(ArticyClassRestriction="ArticyNode"))
+	    FArticyRef StartOn;
+        ```
+
+- Blueprint:
+    - "Should pause on" function of the Articy Flow Player exposed to Blueprints.
+    This function allows you to test whether the flow player pauses on an articy node or not.
+    - "Get Type" function of the Articy Node classes function exposed to Blueprints.
+    This function allows you get the type of a generic ArticyNode (Flow Fragment, Dialog Fragment etc.) and can be used in a Switch node.
+
+- C++:
+    - Added export macros to the generated UCLASSES and USTRUCTS.
+
+- General:
+    - Fixes in the backend to compile as an engine plugin
+
+## Unreal Importer 1.0.0 Changelog
+
+- Disclaimer: Please perform a 'full reimport' after upgrading to this version of the importer by opening up the new Articy Importer window in the level toolbar and clicking 'Force complete reimport'
+In case error messages pop up, please close Unreal, recompile the project inside Visual Studio and start up the engine again.
+
+- Articy Importer window added
+    - This window hosts the main controls of the importer. The button to open the window can be found in the level toolbar. The window will be expanded in the future with more options and functionality. As a consequence, the import options inside the plugin settings and the import data assets have been removed. Currently it enables the user to perform three import actions:
+        - Force complete reimport
+        - Reimport changes
+        - Regenerate assets
+
+- Import Cache & Restoration added
+    - The importer will now cache the last valid import state and will try to restore that state when a new import fails to compile.
+
+- Blueprint:
+    - Changed: ImportedPackages map of the Import Data Asset is no longer blueprint readable
+
+- C++:
+    - Changed: ArticyImporter module renamed to ArticyEditor
+    - Changed: The Articy Asset Picker is now exported to other modules, meaning that it can be accessed for custom purposes without modifying plugin code
+
+- General:
+    - Stability improved
+    - Added: Editor resources to better represent articy:draft related functionality
+    - Changed: PIE import queue now uses 'Reimport changes' instead of 'Complete reimport'
+    - Changed: Folder structure of the plugin. Code depending on paths, such as includes, may need to adapt to the new structure.
+    - Fix: Importing after closing the plugin settings no longer crashes the engine
+
 ## Unreal Importer 0.0.5 Changelog
 
 - Disclaimer: Please perform a 'full reimport' after upgrading to this version of the importer by going into the plugin settings and clicking 'Force complete reimport'

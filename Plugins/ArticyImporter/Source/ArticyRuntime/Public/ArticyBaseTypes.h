@@ -1,9 +1,10 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
- 
 //
+
 #pragma once
 
+#include "CoreMinimal.h"
 #include "ArticyHelpers.h"
 #include "ArticyBaseTypes.generated.h"
 
@@ -34,11 +35,11 @@ public:
 	//========================================//
 
 	/** The lower 32 bit of the id. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	int32 Low = 0;
 
 	/** The higher 32 bit of the id. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	int32 High = 0;
 
 	//========================================//
@@ -102,9 +103,9 @@ public:
 	FArticySize() = default;
 	FArticySize(TSharedPtr<FJsonValue> Json);
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	float w;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	float h;
 
 	FVector2D AsVector() const { return FVector2D{ w, h }; }
@@ -123,13 +124,13 @@ public:
 	FArticyRect() = default;
 	FArticyRect(TSharedPtr<FJsonValue> Json);
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	float x;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	float y;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	float w;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	float h;
 };
 

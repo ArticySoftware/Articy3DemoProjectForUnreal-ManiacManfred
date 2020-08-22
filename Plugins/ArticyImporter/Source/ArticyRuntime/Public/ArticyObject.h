@@ -1,13 +1,12 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
- 
 //
+
 #pragma once
 
 #include "CoreMinimal.h"
 #include "ArticyPrimitive.h"
 #include "ArticyBaseTypes.h"
-#include "ArticyRef.h"
 #include "Dom/JsonValue.h"
 
 #include "ArticyObject.generated.h"
@@ -23,7 +22,7 @@ class ARTICYRUNTIME_API UArticyObject : public UArticyPrimitive
 public:
 	FName GetTechnicalName() const;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Articy")
 	UArticyObject* GetParent() const;
 	TArray<TWeakObjectPtr<UArticyObject>> GetChildren() const;
 	
@@ -39,11 +38,11 @@ public:
 
 protected:
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Articy")
 	FArticyId Parent;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Articy")
 	TArray<FArticyId> Children;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Articy")
 	FString TechnicalName;
 
 	/** Used internally by ArticyImporter. */

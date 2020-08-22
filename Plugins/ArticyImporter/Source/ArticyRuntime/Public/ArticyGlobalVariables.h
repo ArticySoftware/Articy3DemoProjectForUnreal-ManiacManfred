@@ -64,11 +64,11 @@ public:
 	FArticyGvName(const FName FullVariableName);
 	FArticyGvName(const FName VariableNamespace, const FName VariableName);
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	FName FullName;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	FName Namespace;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	FName Variable;
 
 	void SetByFullName(const FName FullVariableName);
@@ -143,7 +143,7 @@ protected:
 	uint32 GetStoreShadowLevel() const;
 
 	/** The name of this variable in the form Namespace.Variable */
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Category = "Articy")
 	FName GVName;
 
 private:
@@ -237,7 +237,7 @@ public:
 
 protected:
 	/** The current value of this variable (i.e. the value of a shadow state, if any is active). */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Articy")
 	int Value = -1;
 
 	/**
@@ -275,7 +275,7 @@ public:
 
 protected:
 	/** The current value of this variable (i.e. the value of a shadow state, if any is active). */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Articy")
 	bool Value = false;
 
 	/**
@@ -323,7 +323,7 @@ public:
 
 protected:
 	/** The current value of this variable (i.e. the value of a shadow state, if any is active). */
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Articy")
 	FString Value;
 
 	/**
@@ -343,9 +343,8 @@ UCLASS()
 class ARTICYRUNTIME_API UArticyBaseVariableSet : public UObject, public IArticyReflectable
 {
 	GENERATED_BODY()
-
-protected:
-	UPROPERTY()
+public:
+	UPROPERTY(VisibleAnywhere)
 	TArray<UArticyVariable*> Variables;
 
 public:
@@ -420,6 +419,8 @@ public:
 	 */
 	static UArticyGlobalVariables* GetDefault(const UObject* WorldContext);
 
+	static UArticyGlobalVariables* GetMutableOriginal();
+
 	/* Unloads the global variables, which causes that all changes get removed. */
 	UFUNCTION(BlueprintCallable, Category = "Packages")
 	void UnloadGlobalVariables();
@@ -433,7 +434,7 @@ public:
 	/* Exec functions are only supported by a couple singleton classes
 	 * To make this exec compatible, one of those exec classes has to forward the call
 	 * See https://wiki.unrealengine.com/Exec_Functions for reference*/
-	UFUNCTION(BlueprintCallable, Exec)
+	UFUNCTION(BlueprintCallable, Exec, Category = "Articy")
 	void PrintGlobalVariable(FArticyGvName GvName);
 
 	UFUNCTION(BlueprintCallable, Category="Getter")

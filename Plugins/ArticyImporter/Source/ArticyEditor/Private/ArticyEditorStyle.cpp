@@ -1,11 +1,14 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
- 
 //
 
 #include "ArticyEditorStyle.h"
+#include "Styling/SlateTypes.h"
+#include "Styling/SlateStyleRegistry.h"
 #include "Slate/SlateGameResources.h"
 #include "Interfaces/IPluginManager.h"
+#include "EditorStyleSet.h"
+#include "Framework/Application/SlateApplication.h"
 
 TSharedPtr< FSlateStyleSet > FArticyEditorStyle::StyleInstance = NULL;
 
@@ -50,8 +53,17 @@ TSharedRef< FSlateStyleSet > FArticyEditorStyle::Create()
 	TSharedRef< FSlateStyleSet > Style = MakeShareable(new FSlateStyleSet("ArticyEditorStyle"));
 	Style->SetContentRoot(IPluginManager::Get().FindPlugin("ArticyImporter")->GetBaseDir() / TEXT("Resources"));
 
-	// the default icon for the UICommand "OpenPluginWindow"
-	Style->Set("ArticyImporter.OpenPluginWindow", new IMAGE_BRUSH(TEXT("ButtonIcon_40x"), Icon40x40));
+	const FTextBlockStyle NormalText = FEditorStyle::GetWidgetStyle<FTextBlockStyle>("NormalText");
+
+	FTextBlockStyle NameText = FTextBlockStyle(NormalText)
+		.SetColorAndOpacity(FLinearColor(0.9f, 0.9f, 0.9f));
+	{
+		NameText.Font.Size = 16;
+		Style->Set("ArticyImporter.GlobalVariables.Namespace", NameText);
+	}
+	
+	// the default icon for a command has to have the name "Plugin.CommandName"
+	//Style->Set("ArticyImporter.OpenArticyImporter", new IMAGE_BRUSH(TEXT("ButtonIcon_40x"), Icon40x40));
 
 	Style->Set("ArticyImporter.ArticyDraftLogoText", new IMAGE_BRUSH(TEXT("ArticyDraftLogoText"), FVector2D(291, 54)));
 	Style->Set("ArticyImporter.ArticyDraft.8", new IMAGE_BRUSH(TEXT("ArticyDraft16"), Icon8x8));

@@ -1,6 +1,5 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
- 
 //
 
 
@@ -17,6 +16,15 @@
 #include "ArticyFlowClasses.h"
 #include "ArticyEntity.h"
 #include "Interfaces/ArticyObjectWithColor.h"
+#include "Kismet/KismetSystemLibrary.h"
+
+// #TODO Remove this and restore at the bottom in the future
+#if ENGINE_MINOR_VERSION == 25
+#ifdef UProperty
+	#undef UProperty
+	#define UProperty FProperty
+#endif
+#endif
 
 const FSlateBrush* UserInterfaceHelperFunctions::GetArticyTypeImage(const UArticyObject* ArticyObject, UserInterfaceHelperFunctions::EImageSize Size)
 {
@@ -200,6 +208,11 @@ const FArticyId* UserInterfaceHelperFunctions::GetTargetID(const UArticyObject* 
 	return nullptr;
 }
 
+#if ENGINE_MINOR_VERSION == 25
+#undef UProperty
+#define UProperty DEPRECATED_MACRO(4.25, "UProperty has been renamed to FProperty") FProperty
+#endif
+
 const FString UserInterfaceHelperFunctions::GetDisplayName(const UArticyObject* ArticyObject)
 {
 	FString DisplayName = "None";
@@ -319,5 +332,32 @@ const bool UserInterfaceHelperFunctions::ShowObjectInArticy(const UArticyObject*
 		UKismetSystemLibrary::LaunchURL(ArticyURL);
 	}
 	
+	return true;
+}
+
+const bool UserInterfaceHelperFunctions::ShowObjectInArticy(const FArticyId ArticyId)
+{
+	FAssetRegistryModule& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
+
+	TArray<FAssetData> OutAssetData;
+	AssetRegistryModule.Get().GetAssetsByClass(UArticyImportData::StaticClass()->GetFName(), OutAssetData, false);
+
+	if (OutAssetData.Num() == 1)
+	{
+		UArticyImportData* ImportData = Cast<UArticyImportData>(OutAssetData[0].GetAsset());
+		FString ProjectGuid = ImportData->GetProject().Guid;
+
+		// restore the original Id in decimal
+		const int32 High = ArticyId.High;
+		const int32 Low = ArticyId.Low;
+		const uint64 HighOriginal = (uint64)High << 32;
+		const uint64 LowOriginal = Low;
+		const uint64 OriginalId = HighOriginal + LowOriginal;
+
+		FString ArticyObjectId = FString::Printf(TEXT("%llu"), OriginalId);
+		FString ArticyURL = FString::Printf(TEXT("articy://localhost/view/%s/%s?pane=selected&tab=current"), *ProjectGuid, *ArticyObjectId);
+		UKismetSystemLibrary::LaunchURL(ArticyURL);
+	}
+
 	return true;
 }

@@ -1,8 +1,9 @@
 #pragma once
 
+#include "CoreMinimal.h"
 #include "ArticyObject.h"
+#include "UObject/UObjectHash.h"
 #include "ArticyPackage.generated.h"
-
 
 
 UCLASS(BlueprintType)
@@ -12,10 +13,10 @@ class ARTICYRUNTIME_API UArticyPackage : public UDataAsset
 
 protected:
 
-	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "Articy")
 	TArray<UArticyObject*> Assets;
 
-	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)	
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "Articy")
 	TMap<FName, TSoftObjectPtr<UArticyObject>> AssetsByTechnicalName;
 public: 
 

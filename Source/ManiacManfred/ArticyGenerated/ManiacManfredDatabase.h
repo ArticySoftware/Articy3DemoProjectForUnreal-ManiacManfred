@@ -8,7 +8,7 @@
 #include "ManiacManfredDatabase.generated.h"
 
 UCLASS(BlueprintType)
-class UManiacManfredDatabase : public UArticyDatabase
+class MANIACMANFRED_API UManiacManfredDatabase : public UArticyDatabase
 {
 	GENERATED_BODY()
 	

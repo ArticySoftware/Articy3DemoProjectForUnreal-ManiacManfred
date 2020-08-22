@@ -247,8 +247,11 @@ struct FArticyExpressoFragment
 	GENERATED_BODY()
 
 public:
+	UPROPERTY(VisibleAnywhere)
 	FString OriginalFragment = "";
+	UPROPERTY(VisibleAnywhere)
 	FString ParsedFragment = "";
+	UPROPERTY(VisibleAnywhere)
 	bool bIsInstruction = false;
 
 	bool operator==(const FArticyExpressoFragment& Other) const
@@ -340,7 +343,7 @@ public:
 	
 protected:
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, Category = "Articy")
 	FArticyImportDataStruct CachedData;
 
 	// indicates whether we've had at least one working import. Used to determine if we want to re
