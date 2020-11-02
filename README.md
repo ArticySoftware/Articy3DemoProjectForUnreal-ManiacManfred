@@ -9,7 +9,8 @@ This project is a good way to show you how you can create a full game using arti
 
 Before you can start you need to make sure you have all the additional applications and projects downloaded:
 
-* Unreal Engine 4.20.x
+* Unreal Engine 4.25.x
+* Visual Studio 2017 or 2019
 * articy:draft 3.1.16 or higher
 * The "Maniac Manfred" articy:draft demo project, which you can get [here](https://www.nevigo.com/redirect/Manfred.Articy)
 
