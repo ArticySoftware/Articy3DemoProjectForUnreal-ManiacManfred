@@ -1,13 +1,14 @@
 //  
-// Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
- 
+// Copyright (c) articy Software GmbH & Co. KG. All rights reserved.   
 //
+
 #pragma once
 
-#include "SlateBasics.h"
+#include "CoreMinimal.h"
+#include "Styling/ISlateStyle.h"
 
 /**  */
-class FArticyEditorStyle
+class ARTICYEDITOR_API FArticyEditorStyle
 {
 public:
 

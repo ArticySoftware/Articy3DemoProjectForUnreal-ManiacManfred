@@ -14,7 +14,7 @@ void UManiacManfredUtility::ChangeSpriteFromTexture(APaperSpriteActor* Actor, UT
 {
 	UPaperSprite* sprite = Actor->GetRenderComponent()->GetSprite();
 	
-	if (UObjectPropertyBase* spriteSourceProp = Cast<UObjectPropertyBase>(sprite->GetClass()->FindPropertyByName(TEXT("SourceTexture"))))
+	if (FObjectPropertyBase* spriteSourceProp = CastField<FObjectPropertyBase>(sprite->GetClass()->FindPropertyByName(TEXT("SourceTexture"))))
 	{
 		if (UTexture2D* spriteSourcePropPtr = spriteSourceProp->ContainerPtrToValuePtr<UTexture2D>(sprite))
 		{

@@ -5,84 +5,86 @@
 
 #include "ArticyRuntime/Public/ArticyGlobalVariables.h"
 #include "ManiacManfredGlobalVariables.generated.h"
+#pragma warning(push)
+#pragma warning(disable: 4883) //<disable "optimization cannot be applied due to function size" compile error.
 
 UCLASS(BlueprintType)
-class UManiacManfredGameStateVariables : public UArticyBaseVariableSet
+class MANIACMANFRED_API UManiacManfredGameStateVariables : public UArticyBaseVariableSet
 {
 	GENERATED_BODY()
 	
 public:
 	/** False until the first dialogue with the therapist. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* awake = nullptr;
 	/** True after talking about that topic with the therapist. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* looney_bin = nullptr;
 	/** True after talking about that topic with the therapist. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* memory = nullptr;
 	/** True after knocking down the therapist in the cell. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* therapist_knockedOut = nullptr;
 	/** True after the therapist left the cell. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* therapist_gone = nullptr;
 	/** True as soon as the cell door is open. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* door_open = nullptr;
 	/** True after convincing the therapist.  */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* therapist_convinced = nullptr;
 	/** True after getting the key from the knocked-down therapist. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* looted = nullptr;
 	/** True after hearing the unknown voice from the cellar. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* listenedToVoice = nullptr;
 	/** True after clicking on the lobby door. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* dialogue_beforeLobby = nullptr;
 	/** True after trying to enter the cellar. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* dialogue_beforeCellar = nullptr;
 	/** True after talking to the hamster. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* hamster_talkedTo = nullptr;
 	/** True after getting the hamster out of his cage. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* hamster_saved = nullptr;
 	/** True after opening the overflow in the cellar. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* overflow_open = nullptr;
 	/** True after reading the book in the cellar. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* book_read = nullptr;
 	/** True after opening the locker. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* locker_open = nullptr;
 	/** The current number in a try to open the locker. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyInt* lock_number = nullptr;
 	/** The amount of correct numbers in a try to open the locker in the cellar. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyInt* lock_correctNumbers = nullptr;
 	/** True if the exit in the lobby is open. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* exit_open = nullptr;
 	/** True after knocking the therapist down in the lobby. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* therapist_down = nullptr;
 	/** True after handing the sleeping pills to the therapist. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* therapist_knockedOut2 = nullptr;
 	/** True after talking to the guard. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* guard_met = nullptr;
 	/** True after knocking out the guard in the lobby. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* guard_knockedOut = nullptr;
 	/** True if the guard was drugged */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UArticyBool* guard_drugged = nullptr;
 	
 	 UManiacManfredGameStateVariables() 
@@ -168,55 +170,55 @@ public:
 };
 
 UCLASS(BlueprintType)
-class UManiacManfredInventoryVariables : public UArticyBaseVariableSet
+class MANIACMANFRED_API UManiacManfredInventoryVariables : public UArticyBaseVariableSet
 {
 	GENERATED_BODY()
 	
 public:
 	/** True after finding the crowbar in the cell. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* crowbar = nullptr;
 	/** True after getting the key from the therapist. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* key = nullptr;
 	/** True after receiving the opener from the hamster. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* opener = nullptr;
 	/** True after helping the hamster. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* hamster = nullptr;
 	/** True after finding the aluminium in the cellar. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* aluminium = nullptr;
 	/** True after creating the bomb. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* bomb = nullptr;
 	/** True after finding the plutonium in the cellar. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* plutonium = nullptr;
 	/** True after combining enriched plutonium with cable. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* detonator = nullptr;
 	/** True after combining plutonium with construction kit. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* enrichedPlutonium = nullptr;
 	/** True after finding the cable in the cellar. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* cable = nullptr;
 	/** True after finding the broom in the cellar. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* broom = nullptr;
 	/** True after finding the construction kit in the cellar. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* constructionKit = nullptr;
 	/** True after combining the banana with the sleeping pills. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* bananaPill = nullptr;
 	/** True after finding the banana in the lobby. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* banana = nullptr;
 	/** True after finding the sleeping pills in the lobby. */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UArticyBool* sleepingPills = nullptr;
 	
 	 UManiacManfredInventoryVariables() 
@@ -276,14 +278,14 @@ public:
 
 /** Global Articy Variables */
 UCLASS(BlueprintType)
-class UManiacManfredGlobalVariables : public UArticyGlobalVariables
+class MANIACMANFRED_API UManiacManfredGlobalVariables : public UArticyGlobalVariables
 {
 	GENERATED_BODY()
 	
 public:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="GameState")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="GameState")
 	UManiacManfredGameStateVariables* GameState = nullptr;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Instanced, Category="Inventory")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Inventory")
 	UManiacManfredInventoryVariables* Inventory = nullptr;
 	
 	 UManiacManfredGlobalVariables() 
@@ -311,3 +313,4 @@ public:
 		return static_cast<UManiacManfredGlobalVariables*>(UArticyGlobalVariables::GetDefault(WorldContext));
 	}
 };
+#pragma warning(pop)

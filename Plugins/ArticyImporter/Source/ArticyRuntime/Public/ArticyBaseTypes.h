@@ -1,9 +1,10 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
- 
 //
+
 #pragma once
 
+#include "CoreMinimal.h"
 #include "ArticyHelpers.h"
 #include "ArticyBaseTypes.generated.h"
 
@@ -27,18 +28,23 @@ public:
 	// ReSharper disable once CppNonExplicitConvertingConstructor
 	/** Implicit conversion from FString. */
 	FArticyId(const FString &Value) { *this = Value; }
-
 	/** Json deserializer. */
 	FArticyId(const TSharedPtr<FJsonValue> Json) { *this = (Json->Type == EJson::String ? ArticyHelpers::HexToUint64(Json->AsString()) : -1); }
 	
 	//========================================//
 
+	/** This function expects the String to contain Low= and High=.
+	 * Used in custom UI elements like pins where direct access is often not possible
+	 * Ref: Color InitFromString
+	 */
+	bool InitFromString(const FString InSourceString);
+
 	/** The lower 32 bit of the id. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	int32 Low = 0;
 
 	/** The higher 32 bit of the id. */
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	int32 High = 0;
 
 	//========================================//
@@ -84,6 +90,18 @@ public:
 	{
 		return High == 0 && Low == 0;
 	}
+
+	/** This function is primarily used for custom UI works that require Ids to be set via String. Do not change this without consideration! */
+	FString ToString() const
+	{
+		return FString::Printf(TEXT("(Low=%d, High=%d)"), Low, High);
+	}
+
+	/** This function is used instead of the normal ToString function when asset friendly names are required (no commas etc.)! */
+	FString ToAssetFriendlyString() const
+	{
+		return FString::Printf(TEXT("%d_%d"), Low, High);
+	}
 };
 
 //---------------------------------------------------------------------------//
@@ -102,9 +120,9 @@ public:
 	FArticySize() = default;
 	FArticySize(TSharedPtr<FJsonValue> Json);
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	float w;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	float h;
 
 	FVector2D AsVector() const { return FVector2D{ w, h }; }
@@ -123,13 +141,13 @@ public:
 	FArticyRect() = default;
 	FArticyRect(TSharedPtr<FJsonValue> Json);
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	float x;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	float y;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	float w;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Articy")
 	float h;
 };
 

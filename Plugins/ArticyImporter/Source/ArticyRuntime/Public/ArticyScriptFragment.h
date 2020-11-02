@@ -17,10 +17,11 @@ UCLASS(BlueprintType, abstract)
 class ARTICYRUNTIME_API UArticyScriptFragment : public UArticyPrimitive
 {
 	GENERATED_BODY()
-
+public:
+	const FString& GetExpression() const { return Expression; }
 protected:
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Articy")
 	FString Expression = "";
 
 	//returns a cached hash of the expression

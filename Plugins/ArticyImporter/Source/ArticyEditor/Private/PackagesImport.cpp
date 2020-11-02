@@ -1,17 +1,24 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
- 
 //
+
 #pragma once
 
-
-
 #include "PackagesImport.h"
+#include "ArticyEditorModule.h"
+#include "ArticyImporterHelpers.h"
 #include "ArticyImportData.h"
 #include "CodeGeneration/CodeGenerator.h"
 #include "ArticyObject.h"
+#include "Policies/CondensedJsonPrintPolicy.h"
+#include "Serialization/JsonSerializer.h"
+#include "Serialization/JsonWriter.h"
+#include "Misc/Paths.h"
+#include "Misc/App.h"
+#include "UObject/ConstructorHelpers.h"
 #include <string>
-#include "ArticyImporterHelpers.h"
+
+#include "ArticyPluginSettings.h"
 
 #define STRINGIFY(x) #x
 
@@ -272,6 +279,11 @@ void FArticyPackageDefs::GenerateAssets(UArticyImportData* Data) const
 			{
 				if (auto children = parentChildrenCache.Find(articyObj->GetId()))
 				{
+					// if the setting is enabled, try to sort. Will only work with exported position properties.
+					if(GetDefault<UArticyPluginSettings>()->bSortChildrenAtGeneration)
+					{
+						children->Values.Sort(ArticyImporterHelpers::FCompareArticyNodeXLocation());
+					}
 					articyObj->SetProp(childrenProp, children->Values);
 				}
 			}

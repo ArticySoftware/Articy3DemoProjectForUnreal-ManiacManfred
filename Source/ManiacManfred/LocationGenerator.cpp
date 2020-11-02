@@ -308,15 +308,15 @@ void ULocationGenerator::SetSpritePolygonCollider(UPaperSprite* Sprite, TArray<F
 #if WITH_EDITOR
 	// here we use Unreals reflection to set the collider on a sprite
 
-	if (UProperty* collisionGeometryProp = Sprite->GetClass()->FindPropertyByName("CollisionGeometry"))
+	if (FProperty* collisionGeometryProp = Sprite->GetClass()->FindPropertyByName("CollisionGeometry"))
 	{
 		void* structAddress = collisionGeometryProp->ContainerPtrToValuePtr<void>(Sprite);
 
-		if (UStructProperty* structProp = Cast<UStructProperty>(collisionGeometryProp))
+		if (FStructProperty* structProp = CastField<FStructProperty>(collisionGeometryProp))
 		{
 			UScriptStruct* scriptStruct = structProp->Struct;
 		
-			if (UArrayProperty* shapesProp = Cast<UArrayProperty>(scriptStruct->FindPropertyByName("Shapes")))
+			if (FArrayProperty* shapesProp = CastField<FArrayProperty>(scriptStruct->FindPropertyByName("Shapes")))
 			{
 				FSpriteGeometryCollection* collisionGeometryPtr = shapesProp->ContainerPtrToValuePtr<FSpriteGeometryCollection>(structAddress);
 

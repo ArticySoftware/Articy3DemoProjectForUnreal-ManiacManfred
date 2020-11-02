@@ -120,7 +120,7 @@ class EManiacManfredPreviewImageViewBoxModes : uint8
 
 /** UCLASS generated from ArticyObjectDef FlowFragment */
 UCLASS(BlueprintType)
-class UManiacManfredFlowFragment : public UArticyFlowFragment,
+class MANIACMANFRED_API UManiacManfredFlowFragment : public UArticyFlowFragment,
  public IArticyObjectWithAttachments,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithPreviewImage,
@@ -166,7 +166,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Dialogue */
 UCLASS(BlueprintType)
-class UManiacManfredDialogue : public UArticyDialogue,
+class MANIACMANFRED_API UManiacManfredDialogue : public UArticyDialogue,
  public IArticyObjectWithAttachments,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithPreviewImage,
@@ -212,7 +212,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef DialogueFragment */
 UCLASS(BlueprintType)
-class UManiacManfredDialogueFragment : public UArticyDialogueFragment,
+class MANIACMANFRED_API UManiacManfredDialogueFragment : public UArticyDialogueFragment,
  public IArticyObjectWithMenuText,
  public IArticyObjectWithStageDirections,
  public IArticyObjectWithSpeaker,
@@ -258,7 +258,7 @@ public:
 
 /** UCLASS generated from Articy Soundfile Feature */
 UCLASS(BlueprintType)
-class UManiacManfredSoundfileFeature : public UArticyBaseFeature
+class MANIACMANFRED_API UManiacManfredSoundfileFeature : public UArticyBaseFeature
 {
 	GENERATED_BODY()
 	
@@ -269,7 +269,7 @@ public:
 };
 /** UCLASS generated from Articy DialogChoice Feature */
 UCLASS(BlueprintType)
-class UManiacManfredDialogChoiceFeature : public UArticyBaseFeature
+class MANIACMANFRED_API UManiacManfredDialogChoiceFeature : public UArticyBaseFeature
 {
 	GENERATED_BODY()
 	
@@ -284,7 +284,7 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef DialogChoice */
 UCLASS(BlueprintType)
-class UManiacManfredDialogChoice : public UManiacManfredDialogueFragment,
+class MANIACMANFRED_API UManiacManfredDialogChoice : public UManiacManfredDialogueFragment,
  public IManiacManfredObjectWithSoundfileFeature,
  public IManiacManfredObjectWithDialogChoiceFeature
 {
@@ -314,7 +314,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Hub */
 UCLASS(BlueprintType)
-class UManiacManfredHub : public UArticyHub,
+class MANIACMANFRED_API UManiacManfredHub : public UArticyHub,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithColor,
  public IArticyObjectWithText,
@@ -354,7 +354,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Comment */
 UCLASS(BlueprintType)
-class UManiacManfredComment : public UArticyComment,
+class MANIACMANFRED_API UManiacManfredComment : public UArticyComment,
  public IArticyObjectWithColor,
  public IArticyObjectWithText,
  public IArticyObjectWithExternalId,
@@ -391,7 +391,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Jump */
 UCLASS(BlueprintType)
-class UManiacManfredJump : public UArticyJump,
+class MANIACMANFRED_API UManiacManfredJump : public UArticyJump,
  public IArticyObjectWithColor,
  public IArticyObjectWithText,
  public IArticyObjectWithExternalId,
@@ -428,7 +428,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Entity */
 UCLASS(BlueprintType)
-class UManiacManfredEntity : public UArticyEntity,
+class MANIACMANFRED_API UManiacManfredEntity : public UArticyEntity,
  public IArticyObjectWithAttachments,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithColor,
@@ -470,7 +470,7 @@ public:
 
 /** UCLASS generated from Articy ItemCombination Feature */
 UCLASS(BlueprintType)
-class UManiacManfredItemCombinationFeature : public UArticyBaseFeature
+class MANIACMANFRED_API UManiacManfredItemCombinationFeature : public UArticyBaseFeature
 {
 	GENERATED_BODY()
 	
@@ -487,7 +487,7 @@ public:
 };
 /** UCLASS generated from Articy VariableBinding Feature */
 UCLASS(BlueprintType)
-class UManiacManfredVariableBindingFeature : public UArticyBaseFeature
+class MANIACMANFRED_API UManiacManfredVariableBindingFeature : public UArticyBaseFeature
 {
 	GENERATED_BODY()
 	
@@ -498,7 +498,7 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef Item */
 UCLASS(BlueprintType)
-class UManiacManfredItem : public UManiacManfredEntity,
+class MANIACMANFRED_API UManiacManfredItem : public UManiacManfredEntity,
  public IManiacManfredObjectWithItemCombinationFeature,
  public IManiacManfredObjectWithVariableBindingFeature
 {
@@ -528,7 +528,7 @@ public:
 
 /** UCLASS generated from Articy Character Feature */
 UCLASS(BlueprintType)
-class UManiacManfredCharacterFeature : public UArticyBaseFeature
+class MANIACMANFRED_API UManiacManfredCharacterFeature : public UArticyBaseFeature
 {
 	GENERATED_BODY()
 	
@@ -553,7 +553,7 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef Character */
 UCLASS(BlueprintType)
-class UManiacManfredCharacter : public UManiacManfredEntity,
+class MANIACMANFRED_API UManiacManfredCharacter : public UManiacManfredEntity,
  public IManiacManfredObjectWithCharacterFeature
 {
 	GENERATED_BODY()
@@ -574,7 +574,7 @@ public:
 
 /** UCLASS generated from Articy Morale Feature */
 UCLASS(BlueprintType)
-class UManiacManfredMoraleFeature : public UArticyBaseFeature
+class MANIACMANFRED_API UManiacManfredMoraleFeature : public UArticyBaseFeature
 {
 	GENERATED_BODY()
 	
@@ -585,7 +585,7 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef Player_Character */
 UCLASS(BlueprintType)
-class UManiacManfredPlayer_Character : public UManiacManfredEntity,
+class MANIACMANFRED_API UManiacManfredPlayer_Character : public UManiacManfredEntity,
  public IManiacManfredObjectWithMoraleFeature,
  public IManiacManfredObjectWithCharacterFeature
 {
@@ -615,7 +615,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Location */
 UCLASS(BlueprintType)
-class UManiacManfredLocation : public UArticyLocation,
+class MANIACMANFRED_API UManiacManfredLocation : public UArticyLocation,
  public IArticyObjectWithAttachments,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithPreviewImage,
@@ -657,7 +657,7 @@ public:
 
 /** UCLASS generated from Articy LocationSettings Feature */
 UCLASS(BlueprintType)
-class UManiacManfredLocationSettingsFeature : public UArticyBaseFeature
+class MANIACMANFRED_API UManiacManfredLocationSettingsFeature : public UArticyBaseFeature
 {
 	GENERATED_BODY()
 	
@@ -674,7 +674,7 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef LocationSettings */
 UCLASS(BlueprintType)
-class UManiacManfredLocationSettings : public UManiacManfredLocation,
+class MANIACMANFRED_API UManiacManfredLocationSettings : public UManiacManfredLocation,
  public IManiacManfredObjectWithSoundfileFeature,
  public IManiacManfredObjectWithLocationSettingsFeature
 {
@@ -704,7 +704,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Spot */
 UCLASS(BlueprintType)
-class UManiacManfredSpot : public UArticySpot,
+class MANIACMANFRED_API UManiacManfredSpot : public UArticySpot,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithColor,
  public IArticyObjectWithText,
@@ -761,7 +761,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Zone */
 UCLASS(BlueprintType)
-class UManiacManfredZone : public UArticyZone,
+class MANIACMANFRED_API UManiacManfredZone : public UArticyZone,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithPreviewImage,
  public IArticyObjectWithVertices,
@@ -823,7 +823,7 @@ public:
 
 /** UCLASS generated from Articy ZoneCondition Feature */
 UCLASS(BlueprintType)
-class UManiacManfredZoneConditionFeature : public UArticyBaseFeature
+class MANIACMANFRED_API UManiacManfredZoneConditionFeature : public UArticyBaseFeature
 {
 	GENERATED_BODY()
 	
@@ -854,7 +854,7 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef Conditional_Zone */
 UCLASS(BlueprintType)
-class UManiacManfredConditional_Zone : public UManiacManfredZone,
+class MANIACMANFRED_API UManiacManfredConditional_Zone : public UManiacManfredZone,
  public IManiacManfredObjectWithZoneConditionFeature
 {
 	GENERATED_BODY()
@@ -875,7 +875,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Path */
 UCLASS(BlueprintType)
-class UManiacManfredPath : public UArticyPath,
+class MANIACMANFRED_API UManiacManfredPath : public UArticyPath,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithPreviewImage,
  public IArticyObjectWithVertices,
@@ -941,7 +941,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Link */
 UCLASS(BlueprintType)
-class UManiacManfredLink : public UArticyLink,
+class MANIACMANFRED_API UManiacManfredLink : public UArticyLink,
  public IArticyObjectWithColor,
  public IArticyObjectWithText,
  public IArticyObjectWithExternalId,
@@ -989,7 +989,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Asset */
 UCLASS(BlueprintType)
-class UManiacManfredAsset : public UArticyAsset,
+class MANIACMANFRED_API UManiacManfredAsset : public UArticyAsset,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithPreviewImage,
  public IArticyObjectWithColor,
@@ -1032,7 +1032,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef BackgroundImage */
 UCLASS(BlueprintType)
-class UManiacManfredBackgroundImage : public UManiacManfredAsset,
+class MANIACMANFRED_API UManiacManfredBackgroundImage : public UManiacManfredAsset,
  public IManiacManfredObjectWithVariableBindingFeature
 {
 	GENERATED_BODY()
@@ -1053,7 +1053,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Condition */
 UCLASS(BlueprintType)
-class UManiacManfredCondition : public UArticyCondition,
+class MANIACMANFRED_API UManiacManfredCondition : public UArticyCondition,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithText,
  public IArticyObjectWithExternalId,
@@ -1095,7 +1095,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Instruction */
 UCLASS(BlueprintType)
-class UManiacManfredInstruction : public UArticyInstruction,
+class MANIACMANFRED_API UManiacManfredInstruction : public UArticyInstruction,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithText,
  public IArticyObjectWithExternalId,
@@ -1137,7 +1137,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef LocationText */
 UCLASS(BlueprintType)
-class UManiacManfredLocationText : public UArticyLocationText,
+class MANIACMANFRED_API UManiacManfredLocationText : public UArticyLocationText,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithPreviewImage,
  public IArticyObjectWithVertices,
@@ -1199,7 +1199,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef LocationImage */
 UCLASS(BlueprintType)
-class UManiacManfredLocationImage : public UArticyLocationImage,
+class MANIACMANFRED_API UManiacManfredLocationImage : public UArticyLocationImage,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithPreviewImage,
  public IArticyObjectWithVertices,
@@ -1273,7 +1273,7 @@ public:
 
 /** UCLASS generated from Articy DisplayCondition Feature */
 UCLASS(BlueprintType)
-class UManiacManfredDisplayConditionFeature : public UArticyBaseFeature
+class MANIACMANFRED_API UManiacManfredDisplayConditionFeature : public UArticyBaseFeature
 {
 	GENERATED_BODY()
 	
@@ -1284,7 +1284,7 @@ public:
 };
 /** UCLASS generated from ArticyObjectDef DisplayCondition */
 UCLASS(BlueprintType)
-class UManiacManfredDisplayCondition : public UManiacManfredLocationImage,
+class MANIACMANFRED_API UManiacManfredDisplayCondition : public UManiacManfredLocationImage,
  public IManiacManfredObjectWithDisplayConditionFeature
 {
 	GENERATED_BODY()
@@ -1305,7 +1305,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef Document */
 UCLASS(BlueprintType)
-class UManiacManfredDocument : public UArticyDocument,
+class MANIACMANFRED_API UManiacManfredDocument : public UArticyDocument,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithColor,
  public IArticyObjectWithText,
@@ -1341,7 +1341,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef TextObject */
 UCLASS(BlueprintType)
-class UManiacManfredTextObject : public UArticyTextObject,
+class MANIACMANFRED_API UManiacManfredTextObject : public UArticyTextObject,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithAttachments,
  public IArticyObjectWithPreviewImage,
@@ -1383,7 +1383,7 @@ public:
 
 /** UCLASS generated from ArticyObjectDef UserFolder */
 UCLASS(BlueprintType)
-class UManiacManfredUserFolder : public UArticyUserFolder,
+class MANIACMANFRED_API UManiacManfredUserFolder : public UArticyUserFolder,
  public IArticyObjectWithDisplayName,
  public IArticyObjectWithExternalId,
  public IArticyObjectWithShortId,

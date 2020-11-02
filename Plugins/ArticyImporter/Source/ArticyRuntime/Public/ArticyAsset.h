@@ -1,11 +1,14 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
- 
 //
+
 #pragma once
 
+#include "CoreMinimal.h"
 #include "ArticyObject.h"
-
+#include "FileMediaSource.h"
+#include "Sound/SoundWave.h"
+#include "Engine/Texture2D.h"
 #include "ArticyAsset.generated.h"
 
 UENUM(BlueprintType)
@@ -47,10 +50,10 @@ public:
 	UTexture2D* LoadAsTexture2D() const;
 
 	UFUNCTION(BlueprintCallable, Category="Load Asset")
-	class USoundWave* LoadAsSoundWave() const;
+	USoundWave* LoadAsSoundWave() const;
 
 	UFUNCTION(BlueprintCallable, Category = "Load Asset")
-	class UFileMediaSource* LoadAsFileMediaSource() const;
+	UFileMediaSource* LoadAsFileMediaSource() const;
 	
 	/** The relative path of the referenced asset. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Meta Data")
@@ -60,6 +63,6 @@ public:
 	EArticyAssetCategory Category;
 
 private:
-	UPROPERTY(Transient, VisibleAnywhere)
+	UPROPERTY(Transient, VisibleAnywhere, Category = "Articy")
 	mutable TWeakObjectPtr<UObject> Asset = nullptr;
 };
