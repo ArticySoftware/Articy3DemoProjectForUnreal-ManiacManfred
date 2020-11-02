@@ -1,8 +1,6 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
- 
 //
-
 
 #include "ArticyEditorModule.h"
 #include "ArticyPluginSettings.h"
@@ -11,16 +9,14 @@
 #include "ArticyEditorStyle.h"
 #include "ArticyFlowClasses.h"
 #include "CodeGeneration/CodeGenerator.h"
-#include "Customizations/ArticyPluginSettingsCustomization.h"
-#include "Customizations/ArticyRefCustomization.h"
-#include "Customizations/ArticyGVCustomization.h"
-#include "Customizations/ArticyRefWidgetCustomizations/DefaultArticyRefWidgetCustomizations.h"
+#include "Customizations/ArticyIdPropertyWidgetCustomizations/DefaultArticyIdPropertyWidgetCustomizations.h"
 #include "Developer/Settings/Public/ISettingsModule.h"
 #include "Developer/Settings/Public/ISettingsSection.h"
 #include "Editor/PropertyEditor/Public/PropertyEditorModule.h"
 #include "Misc/MessageDialog.h"
 #include "Dialogs/Dialogs.h"
 #include <Widgets/SWindow.h>
+#include "AssetToolsModule.h"
 #include "Widgets/Docking/SDockTab.h"
 #include "Editor.h"
 #include "DirectoryWatcherModule.h"
@@ -29,6 +25,12 @@
 #include "IDirectoryWatcher.h"
 #include "Framework/MultiBox/MultiBoxBuilder.h"
 #include "LevelEditor.h"
+#include "Customizations/ArticyPinFactory.h"
+#include "Customizations/AssetActions/AssetTypeActions_ArticyGV.h"
+#include "Customizations/Details/ArticyGVCustomization.h"
+#include "Customizations/Details/ArticyPluginSettingsCustomization.h"
+#include "Customizations/Details/ArticyIdCustomization.h"
+#include "Customizations/Details/ArticyRefCustomization.h"
 
 DEFINE_LOG_CATEGORY(LogArticyEditor)
 
@@ -41,9 +43,11 @@ void FArticyEditorModule::StartupModule()
 	CustomizationManager = MakeShareable(new FArticyEditorCustomizationManager);
 	
 	RegisterArticyToolbar();
+	RegisterAssetTypeActions();
 	RegisterConsoleCommands();
-	RegisterDefaultArticyRefWidgetExtensions();
+	RegisterDefaultArticyIdPropertyWidgetExtensions();
 	RegisterDetailCustomizations();
+	RegisterGraphPinFactory();
 	RegisterPluginSettings();
 	RegisterPluginCommands();
 	// directory watcher has to be changed or removed as the results aren't quite deterministic
@@ -74,18 +78,26 @@ void FArticyEditorModule::RegisterDirectoryWatcher()
 	DirectoryWatcherModule.Get()->RegisterDirectoryChangedCallback_Handle(CodeGenerator::GetSourceFolder(), IDirectoryWatcher::FDirectoryChanged::CreateRaw(this, &FArticyEditorModule::OnGeneratedCodeChanged), GeneratedCodeWatcherHandle);
 }
 
+void FArticyEditorModule::RegisterGraphPinFactory() const
+{
+	TSharedPtr<FArticyRefPinFactory> ArticyRefPinFactory = MakeShareable(new FArticyRefPinFactory);
+	FEdGraphUtilities::RegisterVisualPinFactory(ArticyRefPinFactory);
+}
+
 void FArticyEditorModule::RegisterConsoleCommands()
 {
 	ConsoleCommands = new FArticyEditorConsoleCommands(*this);
 }
 
-void FArticyEditorModule::RegisterDefaultArticyRefWidgetExtensions() const
+void FArticyEditorModule::RegisterDefaultArticyIdPropertyWidgetExtensions() const
 {
-	// this registers the articy button extension for all UArticyObjects.
-	GetCustomizationManager()->RegisterArticyRefWidgetCustomizationFactory(FOnCreateArticyRefWidgetCustomizationFactory::CreateLambda([]()
+#if PLATFORM_WINDOWS
+	// this registers the articy button extension for all UArticyObjects. Only for Windows, since articy is only available for windows
+	GetCustomizationManager()->RegisterArticyIdPropertyWidgetCustomizationFactory(FOnCreateArticyIdPropertyWidgetCustomizationFactory::CreateLambda([]()
 	{
 		return MakeShared<FArticyButtonCustomizationFactory>();
 	}));
+#endif
 }
 
 void FArticyEditorModule::RegisterDetailCustomizations() const
@@ -93,11 +105,27 @@ void FArticyEditorModule::RegisterDetailCustomizations() const
 	// register custom details for ArticyRef struct
 	FPropertyEditorModule& PropertyModule = FModuleManager::LoadModuleChecked<FPropertyEditorModule>("PropertyEditor");
 
+	PropertyModule.RegisterCustomPropertyTypeLayout("ArticyId", FOnGetPropertyTypeCustomizationInstance::CreateStatic(&FArticyIdCustomization::MakeInstance));
 	PropertyModule.RegisterCustomPropertyTypeLayout("ArticyRef", FOnGetPropertyTypeCustomizationInstance::CreateStatic(&FArticyRefCustomization::MakeInstance));
 	PropertyModule.RegisterCustomClassLayout("ArticyPluginSettings", FOnGetDetailCustomizationInstance::CreateStatic(&FArticyPluginSettingsCustomization::MakeInstance));
 	PropertyModule.RegisterCustomClassLayout("ArticyGlobalVariables", FOnGetDetailCustomizationInstance::CreateStatic(&FArticyGVCustomization::MakeInstance));
 
 	PropertyModule.NotifyCustomizationModuleChanged();
+}
+
+TArray<UArticyPackage*> FArticyEditorModule::GetPackagesSlow()
+{
+	FAssetRegistryModule& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
+	TArray<FAssetData> PackageData;
+	AssetRegistryModule.Get().GetAssetsByClass(UArticyPackage::StaticClass()->GetFName(), PackageData);
+
+	TArray<UArticyPackage*> Packages;
+	for(FAssetData& Data : PackageData)
+	{
+		Packages.Add(Cast<UArticyPackage>(Data.GetAsset()));
+	}
+
+	return Packages;
 }
 
 void FArticyEditorModule::RegisterArticyToolbar()
@@ -113,6 +141,12 @@ void FArticyEditorModule::RegisterArticyToolbar()
 		ToolbarExtender->AddToolBarExtension("Settings", EExtensionHook::After, PluginCommands, FToolBarExtensionDelegate::CreateRaw(this, &FArticyEditorModule::AddToolbarExtension));
 		LevelEditorModule.GetToolBarExtensibilityManager()->AddExtender(ToolbarExtender);
 	}
+}
+
+void FArticyEditorModule::RegisterAssetTypeActions()
+{
+	IAssetTools& AssetTools = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools").Get();
+	AssetTools.RegisterAssetTypeActions(MakeShareable(new FAssetTypeActions_ArticyGV()));
 }
 
 void FArticyEditorModule::RegisterPluginCommands()
@@ -159,9 +193,9 @@ void FArticyEditorModule::RegisterPluginSettings() const
 
 void FArticyEditorModule::UnregisterDefaultArticyRefWidgetExtensions() const
 {
-	for(const IArticyRefWidgetCustomizationFactory* DefaultFactory : DefaultArticyRefWidgetCustomizationFactories)
+	for(const IArticyIdPropertyWidgetCustomizationFactory* DefaultFactory : DefaultArticyRefWidgetCustomizationFactories)
 	{
-		GetCustomizationManager()->UnregisterArticyRefWidgetCustomizationFactory(DefaultFactory);
+		GetCustomizationManager()->UnregisterArticyIdPropertyWidgetCustomizationFactory(DefaultFactory);
 	}
 }
 

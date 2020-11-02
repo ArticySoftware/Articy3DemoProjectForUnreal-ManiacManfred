@@ -1,6 +1,5 @@
 //  
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
- 
 //
 #pragma once
 
@@ -10,13 +9,14 @@
 #include "ArticyEditorConsoleCommands.h"
 #include "Customizations/ArticyEditorCustomizationManager.h"
 #include "Framework/Commands/UICommandList.h"
-#include "Slate/SArticyRefProperty.h"
+#include "Slate/SArticyIdProperty.h"
 
 
 DECLARE_LOG_CATEGORY_EXTERN(LogArticyEditor, Log, All)
 
 DECLARE_MULTICAST_DELEGATE(FOnImportFinished);
 DECLARE_MULTICAST_DELEGATE_OneParam(FOnCompilationFinished, UArticyImportData*);
+DECLARE_MULTICAST_DELEGATE(FOnAssetsGenerated);
 
 class FToolBarBuilder;
 class FMenuBuilder;
@@ -43,26 +43,30 @@ public:
 	}
 
 	TSharedPtr<FArticyEditorCustomizationManager> GetCustomizationManager() const { return CustomizationManager; }
+	TArray<UArticyPackage*> ARTICYEDITOR_API GetPackagesSlow();
 	
 	void RegisterArticyToolbar();
+	void RegisterAssetTypeActions();
 	void RegisterConsoleCommands();
 	/** Registers all default widget extensions. As of this point, the articy button */
-	void RegisterDefaultArticyRefWidgetExtensions() const;
+	void RegisterDefaultArticyIdPropertyWidgetExtensions() const;
 	void RegisterDetailCustomizations() const;
 	void RegisterDirectoryWatcher();
+	void RegisterGraphPinFactory() const;
 	void RegisterPluginCommands();
 	void RegisterPluginSettings() const;
 	void RegisterToolTabs();
 
 	void UnregisterPluginSettings() const;
 	void UnregisterDefaultArticyRefWidgetExtensions() const;
-	
+
 	void QueueImport();
 	bool IsImportQueued();
 
 	/** Delegate to bind custom logic you want to perform after the import has successfully finished */
-	FOnImportFinished OnImportFinished;
 	FOnCompilationFinished OnCompilationFinished;
+	FOnAssetsGenerated OnAssetsGenerated;
+	FOnImportFinished OnImportFinished;
 
 private:
 	void OpenArticyWindow();
@@ -89,5 +93,5 @@ private:
 	TSharedPtr<FArticyEditorCustomizationManager> CustomizationManager = nullptr;
 
 	/** The CustomizationManager has ownership of the factories. These here are cached for removal at shutdown */
-	TArray<const IArticyRefWidgetCustomizationFactory*> DefaultArticyRefWidgetCustomizationFactories;
+	TArray<const IArticyIdPropertyWidgetCustomizationFactory*> DefaultArticyRefWidgetCustomizationFactories;
 };

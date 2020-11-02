@@ -9,15 +9,15 @@ FArticyEditorCustomizationManager::FArticyEditorCustomizationManager()
 {
 }
 
-IArticyRefWidgetCustomizationFactory* FArticyEditorCustomizationManager::RegisterArticyRefWidgetCustomizationFactory(FOnCreateArticyRefWidgetCustomizationFactory GetCustomizationDelegate)
+IArticyIdPropertyWidgetCustomizationFactory* FArticyEditorCustomizationManager::RegisterArticyIdPropertyWidgetCustomizationFactory(FOnCreateArticyIdPropertyWidgetCustomizationFactory GetCustomizationDelegate)
 {
-	ArticyRefWidgetCustomizationFactories.Add(GetCustomizationDelegate.Execute());
-	return ArticyRefWidgetCustomizationFactories.Last().Get();
+	ArticyIdPropertyWidgetCustomizationFactories.Add(GetCustomizationDelegate.Execute());
+	return ArticyIdPropertyWidgetCustomizationFactories.Last().Get();
 }
 
-void FArticyEditorCustomizationManager::UnregisterArticyRefWidgetCustomizationFactory(const IArticyRefWidgetCustomizationFactory* Factory)
+void FArticyEditorCustomizationManager::UnregisterArticyIdPropertyWidgetCustomizationFactory(const IArticyIdPropertyWidgetCustomizationFactory* Factory)
 {
-	const int32 RemovedElements = ArticyRefWidgetCustomizationFactories.RemoveAll([=](const TSharedPtr<IArticyRefWidgetCustomizationFactory> FactoryPtr)
+	const int32 RemovedElements = ArticyIdPropertyWidgetCustomizationFactories.RemoveAll([=](const TSharedPtr<IArticyIdPropertyWidgetCustomizationFactory> FactoryPtr)
 	{
 		return Factory == FactoryPtr.Get();
 	});
@@ -25,11 +25,16 @@ void FArticyEditorCustomizationManager::UnregisterArticyRefWidgetCustomizationFa
 	ensureMsgf(RemovedElements != 0, TEXT("Failed removing factory. It was either not registered or removed already."));
 }
 
-void FArticyEditorCustomizationManager::CreateArticyRefWidgetCustomizations(FArticyRef& ArticyRef, TArray<TSharedPtr<IArticyRefWidgetCustomization>>& OutCustomizations)
+void FArticyEditorCustomizationManager::CreateArticyIdPropertyWidgetCustomizations(const UArticyObject* ArticyObject, TArray<TSharedPtr<IArticyIdPropertyWidgetCustomization>>& OutCustomizations)
 {
-	for (const TSharedPtr<IArticyRefWidgetCustomizationFactory>& Entry : ArticyRefWidgetCustomizationFactories)
+	if(ArticyObject == nullptr)
 	{
-		if(Entry->SupportsType(ArticyRef))
+		return;
+	}
+	
+	for (const TSharedPtr<IArticyIdPropertyWidgetCustomizationFactory>& Entry : ArticyIdPropertyWidgetCustomizationFactories)
+	{
+		if(Entry->SupportsType(ArticyObject))
 		{
 			OutCustomizations.Add(Entry->CreateCustomization());
 		}

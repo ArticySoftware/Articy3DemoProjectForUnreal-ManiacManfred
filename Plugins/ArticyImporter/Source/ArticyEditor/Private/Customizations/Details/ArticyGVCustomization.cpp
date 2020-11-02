@@ -2,22 +2,15 @@
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
 //
 
-#include "Customizations/ArticyGVCustomization.h"
-
+#include "Customizations/Details/ArticyGVCustomization.h"
 #include "ArticyGlobalVariables.h"
-#include "IDetailChildrenBuilder.h"
 #include "DetailCategoryBuilder.h"
 #include "DetailWidgetRow.h"
-#include "Widgets/SWidget.h"
-#include "Modules/ModuleManager.h"
-#include "IDetailPropertyRow.h"
 #include "Delegates/Delegate.h"
-#include "ArticyObject.h"
-#include "ArticyRef.h"
-#include "ClassViewerModule.h"
-#include "UObject/ConstructorHelpers.h"
 #include "ArticyEditorModule.h"
+#include "Widgets/Layout/SSplitter.h"
 #include "Slate/GV/SArticyGlobalVariablesDebugger.h"
+#include "Launch/Resources/Version.h"
 
 void FArticyGVCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailBuilder)
 {
@@ -31,14 +24,14 @@ void FArticyGVCustomization::CustomizeDetails(IDetailLayoutBuilder& DetailBuilde
 
 	UObject* Object = Objects[0];
 	UArticyGlobalVariables* GV = Cast<UArticyGlobalVariables>(Object);
-	
-	SizeData.RightColumnWidth = TAttribute<float>(this, &FArticyGVCustomization::OnGetRightColumnWidth);
-	SizeData.LeftColumnWidth = TAttribute<float>(this, &FArticyGVCustomization::OnGetLeftColumnWidth);
-	SizeData.OnWidthChanged = SSplitter::FOnSlotResized::CreateSP(this, &FArticyGVCustomization::OnSetColumnWidth);
 
 	TMap<FString, TSharedRef<IPropertyHandle>> Properties;
 	TArray<FName> CategoryNames;
+	// @TODO GetCategoryNames was introduces in 4.22.
+	// Since the details panel should generally never be seen, it's okay that other categories are not hidden in < 4.22
+#if ENGINE_MINOR_VERSION >= 22
 	DetailBuilder.GetCategoryNames(CategoryNames);
+#endif
 
 	IDetailCategoryBuilder& CategoryBuilder = DetailBuilder.EditCategory(TEXT("Default"));
 

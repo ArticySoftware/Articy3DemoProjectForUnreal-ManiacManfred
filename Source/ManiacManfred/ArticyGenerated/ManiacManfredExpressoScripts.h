@@ -15,6 +15,10 @@ class IManiacManfredMethodsProvider
 	
 public:
 	
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta=(DisplayName="TestEvent1"))
+	void TestEvent1_String(const FString& aParam0) ;
+	virtual void TestEvent1_String_Implementation(const FString& aParam0) {  };
+	
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta=(DisplayName="restart"))
 	void restart() ;
 	virtual void restart_Implementation() {  };
@@ -27,6 +31,12 @@ class MANIACMANFRED_API UManiacManfredExpressoScripts : public UArticyExpressoSc
 	
 private:
 	
+	void TestEvent1(const FString& aParam0) const
+	{
+		auto methodProvider = GetUserMethodsProviderObject();
+		if(!methodProvider) return ;
+		IManiacManfredMethodsProvider::Execute_TestEvent1_String(methodProvider, aParam0);
+	}
 	void restart() const
 	{
 		auto methodProvider = GetUserMethodsProviderObject();
@@ -166,9 +176,10 @@ public:
 				(*GameState->awake) == false
 			);
 		});
-		Instructions.Add(514714048, [&]
+		Instructions.Add(-1465166811, [&]
 		{
 			(*GameState->awake) = true;
+ TestEvent1("Hello");
 		});
 		Conditions.Add(1087258897, [&]
 		{
