@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.nevigo.com/articy-importer/unity/media/ManiacManfred_Title.png">
+  <img src="https://www.articy.com/articy-importer/unity/media/ManiacManfred_Title.png">
 </p>
 
 The "Maniac Manfred" demo project is a full articy:draft project we shipped with articy:draft and referenced it in our online help and in some of our product videos. In addition to our existing Unity Maniac Manfred demo project we decided to create an Unreal demo project too.  
@@ -9,7 +9,7 @@ This project is a good way to show you how you can create a full game using arti
 
 Before you can start you need to make sure you have all the additional applications and projects downloaded:
 
-* Unreal Engine 4.25.x
+* Unreal Engine 4.26.x
 * Visual Studio 2017 or 2019
 * articy:draft 3.1.16 or higher
 * The "Maniac Manfred" articy:draft demo project, which you can get [here](https://www.nevigo.com/redirect/Manfred.Articy)

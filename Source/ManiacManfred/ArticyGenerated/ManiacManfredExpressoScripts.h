@@ -15,11 +15,11 @@ class IManiacManfredMethodsProvider
 	
 public:
 	
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta=(DisplayName="TestEvent1"))
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Articy Methods Provider", meta=(DisplayName="TestEvent1"))
 	void TestEvent1_String(const FString& aParam0) ;
 	virtual void TestEvent1_String_Implementation(const FString& aParam0) {  };
 	
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, meta=(DisplayName="restart"))
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category="Articy Methods Provider", meta=(DisplayName="restart"))
 	void restart() ;
 	virtual void restart_Implementation() {  };
 };
