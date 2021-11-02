@@ -12,7 +12,7 @@ Before you can start you need to make sure you have all the additional applicati
 * Unreal Engine 4.26.x
 * Visual Studio 2017 or 2019
 * articy:draft 3.1.16 or higher
-* The "Maniac Manfred" articy:draft demo project, which you can get [here](https://www.nevigo.com/redirect/Manfred.Articy)
+* The "Maniac Manfred" articy:draft demo project, which you can get [here](https://www.articy.com/redirect/Manfred.Articy)
 
 You only need the articy:draft Maniac Manfred project, if you want to make changes to the project and export them to see how the Unreal project and the plugin behaves.
 
@@ -38,4 +38,4 @@ Maniac Manfred was not build to win any prizes or awards. It lacks a lot of poli
 The best way to get started is to take a look into the `LevelHandler` Blueprint. Besides of the general game management of Maniac Manfred, you can see how to traverse through the flow in the form of dialogues with the ArticyFlowPlayer component, deal with articy objects and implement script methods created in articy.  
 Another instructive point of the project is the inventory system, which is split into the Blueprints `Inventory` and `InventoryItem`. Both show much about how to deal with global variables, features and templates.  
 Regarding the usage of articy conditions and instructions the `ClickableZone` and the `LevelImageElement` are the most interesting Blueprints.  
-If you want to learn more about the structure of the articy:draft project itself, you can take a look into [this](https://www.nevigo.com/articy-importer/unity/html/howto_maniacmanfred.htm) article about the Unity Maniac Manfred project.
+If you want to learn more about the structure of the articy:draft project itself, you can take a look into [this](https://www.articy.com/articy-importer/unity/html/howto_maniacmanfred.htm) article about the Unity Maniac Manfred project.
