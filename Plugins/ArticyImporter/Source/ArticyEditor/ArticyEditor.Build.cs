@@ -30,6 +30,8 @@ public class ArticyEditor : ModuleRules
 			new string[]
 			{
 				"Core",
+				"ArticyRuntime",
+				"EditorWidgets",
 				//"ClassViewer"
 				// ... add other public dependencies that you statically link with here ...
 			}
@@ -48,16 +50,17 @@ public class ArticyEditor : ModuleRules
 				"Slate",
 				"SlateCore",
 				// ... add private dependencies that you statically link with here ...	
-                "ArticyRuntime",
 				"Json",
                 "GameProjectGeneration",
                 "ContentBrowser",
 				"PropertyEditor",
 				"EditorStyle",
-				"EditorWidgets",
 				"SourceControl",
 				"GraphEditor",
-				"ApplicationCore"
+				"ApplicationCore",
+#if UE_5_0_OR_LATER
+				"ToolMenus",
+#endif
 			}
 			);
 		

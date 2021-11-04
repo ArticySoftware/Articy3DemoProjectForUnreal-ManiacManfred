@@ -16,7 +16,7 @@ class UArticyBool;
 class UArticyExpressoScripts;
 
 // #TODO Remove this and restore at the bottom in the future
-#if ENGINE_MINOR_VERSION >= 25
+#if ENGINE_MAJOR_VERSION >= 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 25)
 #ifdef UProperty
 	#undef UProperty
 	#define UProperty FProperty
@@ -48,6 +48,8 @@ struct ARTICYRUNTIME_API ExpressoType
 
 	virtual FString& GetString() { return StringValue; }
 	virtual const FString& GetString() const { return StringValue; }
+
+	virtual FString ToString() const;
 
 
 	//---------------------------------------------------------------------------//
@@ -328,7 +330,7 @@ protected:
 	 * Don't change the name, it's called like this in script fragments!
 	 */
 	template<typename ...ArgTypes>
-	static void print(const ExpressoType& Msg, ArgTypes... Args) { print(Msg.GetString(), Args...); }
+	static void print(const ExpressoType& Msg, ArgTypes... Args) { print(Msg.ToString(), Args...); }
 
 	/** Script conditions that are not empty, but rather contain something that evaluates to bool, return that condition. */
 	static const bool& ConditionOrTrue(const bool &Condition) { return Condition; }
@@ -351,12 +353,15 @@ void UArticyExpressoScripts::print(const FString& Msg, ArgTypes... Args)
 
 	auto arr = TArray<ExpressoType>{ Args... };
 	for(int i = 0; i < arr.Num(); ++i)
-		msg.Replace(*FString::Printf(TEXT("{%d}"), i), *FString{ arr[i] });
+		msg = msg.Replace(*FString::Printf(TEXT("{%d}"), i), *FString{ arr[i] });
 
 	PrintInternal(msg);
 }
 
-#if ENGINE_MINOR_VERSION == 25
+// Restore deprecation message for anyone trying to use UProperty after this file.
+// This only applies to 4.25 because that's the version that had both FProperty and UProperty supported (afterwards, only FProperty)
+//  Once we no longer need to support <4.25, we can just replace all UProperty's with FProperty's and delete all related #defines
+#if ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION == 25
 #undef UProperty
 #define UProperty DEPRECATED_MACRO(4.25, "UProperty has been renamed to FProperty") FProperty
 #endif

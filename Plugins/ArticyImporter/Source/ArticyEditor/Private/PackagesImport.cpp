@@ -2,8 +2,6 @@
 // Copyright (c) articy Software GmbH & Co. KG. All rights reserved.  
 //
 
-#pragma once
-
 #include "PackagesImport.h"
 #include "ArticyEditorModule.h"
 #include "ArticyImporterHelpers.h"
@@ -172,7 +170,7 @@ UArticyPackage* FArticyPackageDef::GeneratePackageAsset(UArticyImportData* Data)
 	const FString PackagePath = ArticyHelpers::GetArticyGeneratedFolder() / PackageName;
 
 	// @TODO Engine Versioning
-#if ENGINE_MINOR_VERSION >= 26
+#if ENGINE_MAJOR_VERSION >= 5 || (ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26)
 	UPackage* AssetPackage = CreatePackage(*PackagePath);
 #else
 	UPackage* AssetPackage = CreatePackage(nullptr, *PackagePath);
