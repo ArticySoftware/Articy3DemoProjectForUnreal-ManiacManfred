@@ -52,7 +52,7 @@ msgstr "Keller"
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:FFr_Cellar_0x010000010000080C.Text
 msgctxt "ARTICY,FFr_Cellar_0x010000010000080C.Text"
 msgid "A hamster turns out to be the only living being in the cellar. The way back is closed, so Manfred needs to be \"creative\" to escape the looney bin."
-msgstr "Das einzige Lebewesen im Keller ist ein Hamster. Der Weg zurück ist verschlossen, daher muss Manfred nun einen "kreativen" Weg aus dieser Klappsmühle heraus finden."
+msgstr "Das einzige Lebewesen im Keller ist ein Hamster. Der Weg zurück ist verschlossen, daher muss Manfred nun einen \"kreativen\" Weg aus dieser Klappsmühle heraus finden."
 
 #. Key:	FFr_TheEnd_0x0100000100000C3C.DisplayName
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:FFr_TheEnd_0x0100000100000C3C.DisplayName
@@ -339,7 +339,7 @@ msgstr "Interessant. Es scheint, Sie haben Ihr Gedächtnis verloren. Nun, nichts
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_E3AC36E6_0x0100001600000086.Text
 msgctxt "ARTICY,DFr_E3AC36E6_0x0100001600000086.Text"
 msgid "You are in the \"Lucas Artsington Sanitarium for the mentally disordered\"."
-msgstr "Sie befinden sich in dem "Lucas Artsington Sanatorium für geistig Verwirrte"."
+msgstr "Sie befinden sich in dem \"Lucas Artsington Sanatorium für geistig Verwirrte\"."
 
 #. Key:	DFr_AFFEF7FB_0x0100001600000090.MenuText
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_AFFEF7FB_0x0100001600000090.MenuText
@@ -353,7 +353,7 @@ msgstr "Whoa, warte mal, ich bin in einer Klappsmühle?"
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_CFD417A4_0x0100001600000099.Text
 msgctxt "ARTICY,DFr_CFD417A4_0x0100001600000099.Text"
 msgid "Well, I would use a different term, but basically yes. You admitted yourself to flee from something you called \"uncontrollable interactivity\"."
-msgstr "Nun, ich würde einen anderen Begriff verwenden, aber im Grunde, ja. Sie gaben an, dass Sie vor etwas fliehen, das Sie "unkontrollierbare Interaktivität" nannten."
+msgstr "Nun, ich würde einen anderen Begriff verwenden, aber im Grunde, ja. Sie gaben an, dass Sie vor etwas fliehen, das Sie \"unkontrollierbare Interaktivität\" nannten."
 
 #. Key:	DFr_B99D1535_0x01000016000000A3.Text
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_B99D1535_0x01000016000000A3.Text
@@ -423,7 +423,7 @@ msgstr "Das sind nur die üblichen Nebenwirkungen des Betäubungsmittels."
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_E6F6D67C_0x01000001000002EB.Text
 msgctxt "ARTICY,DFr_E6F6D67C_0x01000001000002EB.Text"
 msgid "You are in the \"Lucas Artsington Sanitarium for the Mentally Disordered\"."
-msgstr "Sie befinden sich in dem "Lucas Artsington Sanatorium für geistig Verwirrte"."
+msgstr "Sie befinden sich in dem \"Lucas Artsington Sanatorium für geistig Verwirrte\"."
 
 #. Key:	DFr_85615A1C_0x01000001000002F5.Text
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_85615A1C_0x01000001000002F5.Text
@@ -458,7 +458,7 @@ msgstr "Okay, Sie denken, ich bin verrückt ... Aber Sie irren sich, Doktor! Ich
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_93D35222_0x010000010000032F.Text
 msgctxt "ARTICY,DFr_93D35222_0x010000010000032F.Text"
 msgid "Well, I would use a different term, but basically yes. You admitted yourself to flee from something you called \"uncontrollable interactivity\"."
-msgstr "Nun, ich würde einen anderen Begriff verwenden, aber im Grunde, ja. Sie gaben an, dass Sie vor etwas fliehen, das Sie "unkontrollierbare Interaktivität" nannten."
+msgstr "Nun, ich würde einen anderen Begriff verwenden, aber im Grunde, ja. Sie gaben an, dass Sie vor etwas fliehen, das Sie \"unkontrollierbare Interaktivität\" nannten."
 
 #. Key:	DFr_7E36A9C4_0x0100000100000339.Text
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_7E36A9C4_0x0100000100000339.Text
@@ -472,7 +472,7 @@ msgstr "Nichts was wir nicht wieder in den Griff kriegen sollten. Ein paar weite
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_DECDC4FC_0x0100000100000343.Text
 msgctxt "ARTICY,DFr_DECDC4FC_0x0100000100000343.Text"
 msgid "You tried to tame the \"beast of non-linearity\" with post-it notes on the wall. At first it seemed to work, but then... one of your notes fell down and you had a complete breakdown."
-msgstr "Sie haben versucht, das Biest der Nichtlinearität" mit Post-it-Notizen an der Wand zu zähmen. Zuerst schien es zu funktionieren, aber dann ... eine Ihrer Notizen fiel auf den Boden und Sie hatten einen kompletten Zusammenbruch."
+msgstr "Sie haben versucht, das Biest der Nichtlinearität\" mit Post-it-Notizen an der Wand zu zähmen. Zuerst schien es zu funktionieren, aber dann ... eine Ihrer Notizen fiel auf den Boden und Sie hatten einen kompletten Zusammenbruch."
 
 #. Key:	DFr_C7E26921_0x0100000100000353.Text
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_C7E26921_0x0100000100000353.Text
@@ -570,7 +570,7 @@ msgstr "Also musst Du mich jetzt gehen lassen, oder?"
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_C8372D95_0x0100000100000402.Text
 msgctxt "ARTICY,DFr_C8372D95_0x0100000100000402.Text"
 msgid "Will you stop saying \"right\"?"
-msgstr "Hören Sie auf immer "richtig" zu sagen!"
+msgstr "Hören Sie auf immer \"richtig\" zu sagen!"
 
 #. Key:	DFr_A79A0E3C_0x010000010000041F.MenuText
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_A79A0E3C_0x010000010000041F.MenuText
@@ -955,7 +955,7 @@ msgstr "Nichts."
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_C0D213B7_0x0100000100000995.Text
 msgctxt "ARTICY,DFr_C0D213B7_0x0100000100000995.Text"
 msgid "This chunk of metal looks strange... here's a label: \"Handle with care! - Weapon-grade Plutonium!\""
-msgstr "Dieses Stück Metall sieht seltsam aus ... hier ist eine Aufschrift: "Vorsicht! - Waffen-Plutonium!""
+msgstr "Dieses Stück Metall sieht seltsam aus ... hier ist eine Aufschrift: \"Vorsicht! - Waffen-Plutonium!\""
 
 #. Key:	DFr_8CB5784C_0x010000010000099F.Text
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_8CB5784C_0x010000010000099F.Text
@@ -1025,7 +1025,7 @@ msgstr "Dieser Kalender scheint der Dienstplan zu sein."
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_2787F0CF_0x0100000100000A04.Text
 msgctxt "ARTICY,DFr_2787F0CF_0x0100000100000A04.Text"
 msgid "Some dates are especially highlighted, most notably May, 25th... it says \"Don't forget: Towel Day!\" in large red letters."
-msgstr "Einige Daten sind besonders markiert, vor allem am 25. Mai... Da  heißt es "Nicht vergessen: Handtuch-Tag!" in großen roten Buchstaben."
+msgstr "Einige Daten sind besonders markiert, vor allem am 25. Mai... Da  heißt es \"Nicht vergessen: Handtuch-Tag!\" in großen roten Buchstaben."
 
 #. Key:	DFr_E999AB56_0x0100000100000A0E.Text
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_E999AB56_0x0100000100000A0E.Text
@@ -1109,7 +1109,7 @@ msgstr "Und eine Pilzwolke..."
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_902221C6_0x0100000100000A8D.Text
 msgctxt "ARTICY,DFr_902221C6_0x0100000100000A8D.Text"
 msgid "A book from my favorite German: \"How I learned to love the bomb\" by Albert Einstein."
-msgstr "Ein Buch aus meinem Lieblingsfach Deutsch: "Wie ich lernte die Bombe zu lieben" von Albert Einstein."
+msgstr "Ein Buch aus meinem Lieblingsfach Deutsch: \"Wie ich lernte die Bombe zu lieben\" von Albert Einstein."
 
 #. Key:	DFr_AEACB12C_0x0100000100000A97.Text
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_AEACB12C_0x0100000100000A97.Text
@@ -1424,7 +1424,7 @@ msgstr "Hallo Doc! Sie sehen hungrig aus. Kann ich Sie für eine leckere Banane 
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_A0BC16E0_0x0100000100000643.Text
 msgctxt "ARTICY,DFr_A0BC16E0_0x0100000100000643.Text"
 msgid "Oh thanks, did you know that the reason bananas are curved has to do with how they grow? Bananas grow in bunches known as 'hands'. As the bananas in a hand grow larger, they eventually curve upwards so that instead of pointing towards the ground, they bend up and point at the sky. This is called 'negative geotropism'. Bananas have this so that they can reach out towards the sun and get more light! Amazing, isn't it?"
-msgstr "Oh danke, wussten Sie, dass der Grund, warum Bananen gebogen sind, damit zu tun hat, wie sie wachsen? Bananen wachsen in Trauben, die als "Hände" bekannt sind. Während die Bananen in einer Hand größer werden, wachsen sie schließlich nach oben gekrümmt, so dass sie, anstatt auf den Boden zu zeigen, sich verbiegen und in den Himmel zeigen. Dies wird als "negativer Geotropismus" bezeichnet. Bananen machen das, damit sie die Sonne erreichen und mehr Licht bekommen! Erstaunlich, nicht wahr?"
+msgstr "Oh danke, wussten Sie, dass der Grund, warum Bananen gebogen sind, damit zu tun hat, wie sie wachsen? Bananen wachsen in Trauben, die als \"Hände\" bekannt sind. Während die Bananen in einer Hand größer werden, wachsen sie schließlich nach oben gekrümmt, so dass sie, anstatt auf den Boden zu zeigen, sich verbiegen und in den Himmel zeigen. Dies wird als \"negativer Geotropismus\" bezeichnet. Bananen machen das, damit sie die Sonne erreichen und mehr Licht bekommen! Erstaunlich, nicht wahr?"
 
 #. Key:	DFr_99D6DB8B_0x010000010000065E.Text
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_99D6DB8B_0x010000010000065E.Text
@@ -1613,7 +1613,7 @@ msgstr "Nun... primitive Gemälde. Vielleicht haben Kinder sie gemalt oder Katze
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_E8BD2F86_0x01000001000007D8.Text
 msgctxt "ARTICY,DFr_E8BD2F86_0x01000001000007D8.Text"
 msgid "It has a biohazard sticker attached. Why? I don't know. I guess for good reasons and that is good enough for me. I won't touch it."
-msgstr "Da klebt ein "Biologische Gefährdung" Aufkleber drauf. Warum? Ich weiß es nicht. Ich denke aus guten Gründen und das reicht mir. Ich werde es nicht anfassen."
+msgstr "Da klebt ein \"Biologische Gefährdung\" Aufkleber drauf. Warum? Ich weiß es nicht. Ich denke aus guten Gründen und das reicht mir. Ich werde es nicht anfassen."
 
 #. Key:	DFr_A95BD732_0x01000001000007E2.Text
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:DFr_A95BD732_0x01000001000007E2.Text
@@ -1935,7 +1935,7 @@ msgstr "Overview"
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:Txt_967070FA_0x0100001600000004.Text
 msgctxt "ARTICY,Txt_967070FA_0x0100001600000004.Text"
 msgid "Maniac Manfred is a classical 2D point & click adventure. The player slips into the role of Manfred, who awakes in a padded cell of a mental hospital without a clue how he got there. Obviously, his goal is to escape the madhouse as quick as possible. \r\n\r\nTo achieve this goal the player must find and combine items (or small animals) and prove his superior intelligence in epic linguistic battles (abbr. \"dialogues\"). In every scene the player can overcome the obstacles in different ways that finally lead to three morally different endings."
-msgstr "<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">Maniac Manfred is a classical 2D point &amp; click adventure. The player slips into the role of Manfred, who awakes in a padded cell of a mental hospital without a clue how he got there. Obviously, his goal is to escape the madhouse as quick as possible. </span></p><p id="s0"><span id="s1">To achieve this goal the player must find and combine items (or small animals) and prove his superior intelligence in epic linguistic battles (abbr. &quot;dialogues&quot;).</span><span id="s1"> In every scene the player can overcome the obstacles in different ways that finally lead to three morally different endings. </span></p></body></html>"
+msgstr "<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id=\"s0\"><span id=\"s1\">Maniac Manfred is a classical 2D point &amp; click adventure. The player slips into the role of Manfred, who awakes in a padded cell of a mental hospital without a clue how he got there. Obviously, his goal is to escape the madhouse as quick as possible. </span></p><p id=\"s0\"><span id=\"s1\">To achieve this goal the player must find and combine items (or small animals) and prove his superior intelligence in epic linguistic battles (abbr. &quot;dialogues&quot;).</span><span id=\"s1\"> In every scene the player can overcome the obstacles in different ways that finally lead to three morally different endings. </span></p></body></html>"
 
 #. Key:	Txt_8087FFD5_0x0100001600000009.DisplayName
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:Txt_8087FFD5_0x0100001600000009.DisplayName
@@ -1949,7 +1949,7 @@ msgstr "Key Facts"
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:Txt_8087FFD5_0x0100001600000009.Text
 msgctxt "ARTICY,Txt_8087FFD5_0x0100001600000009.Text"
 msgid "    * <b>Genre:</b> Point & Click Adventure\r\n    * <b>Platform: </b>PC and IPad\r\n\n<b>USPs:</b>\r\n\r\n    * Four different locations! \r\n    * Three different endings!\r\n    * A <color=#ffa61aff>Hamster</color> with telepathic powers!"
-msgstr "<html><head><style>#s0 {text-align:left;} #s1 {font-weight:bold;font-size:11pt;} #s2 {font-size:11pt;} #s3 {font-weight:bold;text-decoration:underline;font-size:11pt;} #s4 {color:#FFA61A;font-size:11pt;} </style></head><body><ul><li><p id="s0"><span id="s1">Genre:</span><span id="s2"> Point &amp; Click Adventure</span></p></li><li><p id="s0"><span id="s1">Platform: </span><span id="s2">PC and IPad</span></p></li></ul><p id="s0"><span id="s3">USPs:</span></p><ul><li><p id="s0"><span id="s2">Four different locations! </span></p></li><li><p id="s0"><span id="s2">Three different endings!</span></p></li><li><p id="s0"><span id="s2">A </span><a href="articy://localhost/view/~/72057598332899533/?useRef"><span id="s4">Hamster</span></a><span id="s2"> with telepathic powers!</span></p></li></ul></body></html>"
+msgstr "<html><head><style>#s0 {text-align:left;} #s1 {font-weight:bold;font-size:11pt;} #s2 {font-size:11pt;} #s3 {font-weight:bold;text-decoration:underline;font-size:11pt;} #s4 {color:#FFA61A;font-size:11pt;} </style></head><body><ul><li><p id=\"s0\"><span id=\"s1\">Genre:</span><span id=\"s2\"> Point &amp; Click Adventure</span></p></li><li><p id=\"s0\"><span id=\"s1\">Platform: </span><span id=\"s2\">PC and IPad</span></p></li></ul><p id=\"s0\"><span id=\"s3\">USPs:</span></p><ul><li><p id=\"s0\"><span id=\"s2\">Four different locations! </span></p></li><li><p id=\"s0\"><span id=\"s2\">Three different endings!</span></p></li><li><p id=\"s0\"><span id=\"s2\">A </span><a href=\"articy://localhost/view/~/72057598332899533/?useRef\"><span id=\"s4\">Hamster</span></a><span id=\"s2\"> with telepathic powers!</span></p></li></ul></body></html>"
 
 #. Key:	Txt_FF932756_0x010000160000000E.DisplayName
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:Txt_FF932756_0x010000160000000E.DisplayName
@@ -1963,7 +1963,7 @@ msgstr "Game Mechanics"
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:Txt_FF932756_0x010000160000000E.Text
 msgctxt "ARTICY,Txt_FF932756_0x010000160000000E.Text"
 msgid "In every scene the player can overcome the current obstacle in different ways. It's up to the player how ruthless he wants to be in his escape. The choices affect the morality rating and finally lead to three different endings. \r\n\r\nBesides that the gameplay is very typical for a point & click adventure: The player must find items and use or combine them to proceed. Furthermore Maniac Manfred has a strong emphasis on dialogue. Sometimes the player can even solve puzzles with the right dialogue choices alone."
-msgstr "<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">In every scene the player can overcome the current obstacle in different ways. It&#39;s up to the player how ruthless he wants to be in his escape. The choices </span><span id="s1">affect </span><span id="s1">the </span><span id="s1">morality rating and finally lead to three different endings. </span></p><p id="s0"><span id="s1">Besides that the gameplay is very typical for a point &amp; click adventure: The player must find items and use or combine them to proceed. Furthermore Maniac Manfred has a</span><span id="s1"> strong</span><span id="s1"> emphasis on dialogue. Sometimes the player can</span><span id="s1"> even</span><span id="s1"> solve</span><span id="s1"> </span><span id="s1">puzzle</span><span id="s1">s</span><span id="s1"> with the right dialogue choices alone. </span></p></body></html>"
+msgstr "<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id=\"s0\"><span id=\"s1\">In every scene the player can overcome the current obstacle in different ways. It&#39;s up to the player how ruthless he wants to be in his escape. The choices </span><span id=\"s1\">affect </span><span id=\"s1\">the </span><span id=\"s1\">morality rating and finally lead to three different endings. </span></p><p id=\"s0\"><span id=\"s1\">Besides that the gameplay is very typical for a point &amp; click adventure: The player must find items and use or combine them to proceed. Furthermore Maniac Manfred has a</span><span id=\"s1\"> strong</span><span id=\"s1\"> emphasis on dialogue. Sometimes the player can</span><span id=\"s1\"> even</span><span id=\"s1\"> solve</span><span id=\"s1\"> </span><span id=\"s1\">puzzle</span><span id=\"s1\">s</span><span id=\"s1\"> with the right dialogue choices alone. </span></p></body></html>"
 
 #. Key:	Txt_A8FC24CF_0x0100001600000013.DisplayName
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:Txt_A8FC24CF_0x0100001600000013.DisplayName
@@ -1977,7 +1977,7 @@ msgstr "GUI"
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:Txt_A8FC24CF_0x0100001600000013.Text
 msgctxt "ARTICY,Txt_A8FC24CF_0x0100001600000013.Text"
 msgid "Maniac Manfred has the following GUI components:\r\n\r\n    * Morale value - Colored number in the upper left of the screen\r\n    * Mouse cursor - Different icon depending on over what the user is hovering (see <color=#ffa61aff>MouseCursorIcons</color>)\r\n    * Inventory - Bar at the bottom of the screen listing all items in the player's inventory"
-msgstr "<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} #s2 {color:#FFA61A;font-size:11pt;} </style></head><body><p id="s0"><span id="s1">Maniac Manfred has the following GUI components:</span></p><ul><li><p id="s0"><span id="s1">Morale value - Colored number in the upper left of the screen</span></p></li><li><p id="s0"><span id="s1">Mouse cursor - Different icon depending on over what the user is hovering (see </span><a href="articy://localhost/view/~/72057688527208499/?useRef"><span id="s2">MouseCursorIcons</span></a><span id="s1">)</span></p></li><li><p id="s0"><span id="s1">Inventory - Bar at the bottom of the screen listing all items in the player&#39;s inventory</span></p></li></ul></body></html>"
+msgstr "<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} #s2 {color:#FFA61A;font-size:11pt;} </style></head><body><p id=\"s0\"><span id=\"s1\">Maniac Manfred has the following GUI components:</span></p><ul><li><p id=\"s0\"><span id=\"s1\">Morale value - Colored number in the upper left of the screen</span></p></li><li><p id=\"s0\"><span id=\"s1\">Mouse cursor - Different icon depending on over what the user is hovering (see </span><a href=\"articy://localhost/view/~/72057688527208499/?useRef\"><span id=\"s2\">MouseCursorIcons</span></a><span id=\"s1\">)</span></p></li><li><p id=\"s0\"><span id=\"s1\">Inventory - Bar at the bottom of the screen listing all items in the player&#39;s inventory</span></p></li></ul></body></html>"
 
 #. Key:	Txt_5A3BFCB4_0x0100001600000026.DisplayName
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:Txt_5A3BFCB4_0x0100001600000026.DisplayName
@@ -1991,7 +1991,7 @@ msgstr "Morality Rating"
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:Txt_5A3BFCB4_0x0100001600000026.Text
 msgctxt "ARTICY,Txt_5A3BFCB4_0x0100001600000026.Text"
 msgid "As stated above the player's decisions influence the morality rating."
-msgstr "<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">As stated above the player&#39;s decisions influence the morality rating. </span></p></body></html>"
+msgstr "<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id=\"s0\"><span id=\"s1\">As stated above the player&#39;s decisions influence the morality rating. </span></p></body></html>"
 
 #. Key:	Txt_E48E00E3_0x0100001600000038.DisplayName
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:Txt_E48E00E3_0x0100001600000038.DisplayName
@@ -2005,7 +2005,7 @@ msgstr "Controls"
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:Txt_E48E00E3_0x0100001600000038.Text
 msgctxt "ARTICY,Txt_E48E00E3_0x0100001600000038.Text"
 msgid "The game can be played via mouse or touch screen. In both cases the player can (left-)click on objects to interact with them. To use or combine items he must drag & drop them from the inventory to the desired target (another item in the inventory or an object in the scene)."
-msgstr "<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id="s0"><span id="s1">The game can be played via mouse or touch screen. </span><span id="s1">In both cases the player can (left-)click on objects to interact with them. To use or combine items he must drag &amp; drop them from the inventory to the desired target (another item in the inventory or an object in the scene). </span></p></body></html>"
+msgstr "<html><head><style>#s0 {text-align:left;} #s1 {font-size:11pt;} </style></head><body><p id=\"s0\"><span id=\"s1\">The game can be played via mouse or touch screen. </span><span id=\"s1\">In both cases the player can (left-)click on objects to interact with them. To use or combine items he must drag &amp; drop them from the inventory to the desired target (another item in the inventory or an object in the scene). </span></p></body></html>"
 
 #. Key:	Txt_37ED7556_0x0100001600000018.DisplayName
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:Txt_37ED7556_0x0100001600000018.DisplayName
@@ -2019,7 +2019,7 @@ msgstr "Story"
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:Txt_37ED7556_0x0100001600000018.Text
 msgctxt "ARTICY,Txt_37ED7556_0x0100001600000018.Text"
 msgid "<color=#ffa61aff>Manfred</color> was just a usual game designer and lived a happy life, until he had to create a game with a truly non-linear story. After completely getting lost in the branching structure of his game, he had a nervous breakdown and finally admitted himself to the nearest mental hospital. \r\n\r\nThe game begins with Manfred awaking in a padded cell of the Lucas Artsington sanitarium for the mentally diseased. He cannot remember the last days nor how he got where he now is. <color=#ffa61aff>Dr. Artie Cee</color> tries to calm him down, but Manfred only has one goal: Getting out of there as fast as possible."
-msgstr "<html><head><style>#s0 {text-align:left;} #s1 {color:#FFA61A;font-size:11pt;} #s2 {font-size:11pt;} </style></head><body><p id="s0"><a href="articy://localhost/view/~/72057598332899526/?useRef"><span id="s1">Manfred</span></a><span id="s2"> </span><span id="s2">was just a usual game designer and lived a happy life, until he had to create a game with a truly non-linear story. After completely getting lost in the branching structure of his game, he had a nervous br</span><span id="s2">ea</span><span id="s2">kdown and finally admitted himself to </span><span id="s2">the nearest</span><span id="s2"> mental hospital. </span></p><p id="s0"><span id="s2">The game begins with Manfred awaking in a padded cell of the Lucas Artsington sanitarium for the mentally diseased. He cannot remember the last days nor how he got where he now is. </span><a href="articy://localhost/view/~/72057598332899545/?useRef"><span id="s1">Dr. Artie Cee</span></a><span id="s2"> </span><span id="s2">tries to calm him down, but Manfred only has one goal: Getting out of there as fast as possible. </span></p></body></html>"
+msgstr "<html><head><style>#s0 {text-align:left;} #s1 {color:#FFA61A;font-size:11pt;} #s2 {font-size:11pt;} </style></head><body><p id=\"s0\"><a href=\"articy://localhost/view/~/72057598332899526/?useRef\"><span id=\"s1\">Manfred</span></a><span id=\"s2\"> </span><span id=\"s2\">was just a usual game designer and lived a happy life, until he had to create a game with a truly non-linear story. After completely getting lost in the branching structure of his game, he had a nervous br</span><span id=\"s2\">ea</span><span id=\"s2\">kdown and finally admitted himself to </span><span id=\"s2\">the nearest</span><span id=\"s2\"> mental hospital. </span></p><p id=\"s0\"><span id=\"s2\">The game begins with Manfred awaking in a padded cell of the Lucas Artsington sanitarium for the mentally diseased. He cannot remember the last days nor how he got where he now is. </span><a href=\"articy://localhost/view/~/72057598332899545/?useRef\"><span id=\"s1\">Dr. Artie Cee</span></a><span id=\"s2\"> </span><span id=\"s2\">tries to calm him down, but Manfred only has one goal: Getting out of there as fast as possible. </span></p></body></html>"
 
 #. Key:	Itm_BombConstructionKit_0x0100000100000C7B.DisplayName
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:Itm_BombConstructionKit_0x0100000100000C7B.DisplayName
@@ -2159,7 +2159,7 @@ msgstr "Dr. Artie Cee"
 #: /Game/ArticyContent/Generated/Packages/Export_package.Export_package:Chr_HowILearnedToLoveTheBomb_0x01000001000010DF.DisplayName
 msgctxt "ARTICY,Chr_HowILearnedToLoveTheBomb_0x01000001000010DF.DisplayName"
 msgid "\"How I Learned to Love the Bomb\""
-msgstr ""Wie ich lernte die Bombe zu lieben""
+msgstr "\"Wie ich lernte die Bombe zu lieben\""
 
 #. Key:	Chr_Manfred_0x01000001000010C6.DisplayName
 #. SourceLocation:	/Game/ArticyContent/Generated/Packages/Export_package.Export_package:Chr_Manfred_0x01000001000010C6.DisplayName
