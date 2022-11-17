@@ -203,14 +203,15 @@ protected:
 	/**
 	 * If this number of branches is reached, no more branches will be added.
 	 */
-	UPROPERTY(EditAnywhere, Category = "Setup", meta=(ClampMin=0))
-	int32 BranchLimit = 32;
+	// [Alewinn] : no valid reference in code, limit most probably set at Articy side.
+	//UPROPERTY(EditAnywhere, Category = "Setup", meta=(ClampMin=0))
+	//int32 BranchLimit = 32;
 
 	/**
 	 * If a branch reaches this length, exploration on it is aborted.
 	 */
 	UPROPERTY(EditAnywhere, Category = "Setup", meta=(ClampMin=0))
-	int32 ExploreDepthLimit = 128;
+	int32 ExploreLimit = 128;
 
 	/**
 	 * If more than this amount of ShadowLevels are needed at the same time,

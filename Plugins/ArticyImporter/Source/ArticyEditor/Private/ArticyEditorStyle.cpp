@@ -54,8 +54,12 @@ TSharedRef< FSlateStyleSet > FArticyEditorStyle::Create()
 	TSharedRef< FSlateStyleSet > Style = MakeShareable(new FSlateStyleSet("ArticyEditorStyle"));
 	Style->SetContentRoot(IPluginManager::Get().FindPlugin("ArticyImporter")->GetBaseDir() / TEXT("Resources"));
 
+#if ENGINE_MAJOR_VERSION >= 5 && ENGINE_MINOR_VERSION >0
+	const FTextBlockStyle NormalText = FAppStyle::GetWidgetStyle<FTextBlockStyle>("NormalText");
+#else
 	const FTextBlockStyle NormalText = FEditorStyle::GetWidgetStyle<FTextBlockStyle>("NormalText");
-
+#endif
+	
 	FTextBlockStyle NameText = FTextBlockStyle(NormalText)
 		.SetColorAndOpacity(FLinearColor(0.9f, 0.9f, 0.9f));
 	{
@@ -85,6 +89,7 @@ TSharedRef< FSlateStyleSet > FArticyEditorStyle::Create()
 	Style->Set("ArticyImporter.ArticyImporter.8", new IMAGE_BRUSH(TEXT("ArticyImporter64"), Icon8x8));
 	Style->Set("ArticyImporter.ArticyImporter.16", new IMAGE_BRUSH(TEXT("ArticyImporter64"), Icon16x16));
 	Style->Set("ArticyImporter.ArticyImporter.40", new IMAGE_BRUSH(TEXT("ArticyImporter40"), Icon40x40));
+	Style->Set("ArticyImporter.ArticyImporter.40.Small", new IMAGE_BRUSH(TEXT("ArticyImporter16"), Icon16x16));
 	Style->Set("ArticyImporter.ArticyImporter.64", new IMAGE_BRUSH(TEXT("ArticyImporter64"), Icon64x64));
 
 	Style->Set("ArticyImporter.Window.ImporterLogo", new IMAGE_BRUSH(TEXT("ArticyWindow/Logo_ArticyDraftImporter_TopMiddle"), FVector2D(404, 125)));
