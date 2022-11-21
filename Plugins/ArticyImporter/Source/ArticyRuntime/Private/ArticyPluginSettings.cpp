@@ -5,7 +5,11 @@
 #include "ArticyPluginSettings.h"
 #include "Modules/ModuleManager.h"
 #include "ArticyDatabase.h"
+#if ENGINE_MAJOR_VERSION >= 5 && ENGINE_MINOR_VERSION >0 
+#include "AssetRegistry/AssetRegistryModule.h"
+#else
 #include "AssetRegistryModule.h"
+#endif
 #include "Misc/ConfigCacheIni.h"
 
 UArticyPluginSettings::UArticyPluginSettings()
